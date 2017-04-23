@@ -1,13 +1,17 @@
 
 exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('favorites_join').del()
     .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('favorites_join').insert([
         {id: 1, colName: 'rowValue1'},
         {id: 2, colName: 'rowValue2'},
         {id: 3, colName: 'rowValue3'}
-      ]);
-    });
-};
+      ])
+    }).then(function () {
+        return knex.raw(
+          "SELECT setval('favorites_join_id_seq', (SELECT MAX (id) FROM favorites_join))"
+      )
+  }).catch(function (error) {
+      console.error("Oops! ", error)
+  })
+}
