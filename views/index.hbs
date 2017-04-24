@@ -1,2 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+
+<div class="row">
+  {{#each allActivities}}
+  <div class="col-md-3">
+
+<div class="card">
+      <div class="card-content">
+      	<div class="card-header">
+             <h1 class="card-heading">{{title}}</h1>
+         	</div>
+         	<div class="card-body">
+                <img class="img_url" src="{{img_url}}" alt="{{title}}">
+       	</div>
+
+       	<nav class="nav-tabs">
+       		<ul class="nav nav-pills pull-left">
+            <li>{{time}}</li>
+            <li>{{cost}}</li>
+            <li>{{location}}</li>
+            <li>{{party}}</li>
+            <li>{{energy}}</li>
+          </ul>
+       	</nav>
+
+      </div>
+  </div>
+</div>
+{{/each}}
+</div>
