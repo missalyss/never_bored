@@ -1,18 +1,46 @@
+<script defer type="text/javascript" src="/js/filter.js"></script>
+<!--  -->
 
 <div class="row">
-  {{#each allActivities}}
-  <div class="col-md-4">
+  <h1>Filter</h1>
+  <ul class="filterSection">
+    <strong>Show:</strong>
+    <li>
+        <input checked="true" type="checkbox" value="all"/>
+        <label>All</label>
+    </li>
+    <li>
+        <input checked="true" type="checkbox" value="food"/>
+        <label>Food</label>
+    </li>
+    <li>
+        <input checked="true" type="checkbox" value="place"/>
+        <label>Place</label>
+    </li>
+    <li>
+        <input checked="true" type="checkbox" value="musician"/>
+        <label>Musician</label>
+    </li>
+</ul>
+</div>
 
-    <div class="card">
-      <div class="card-content">
-        <a href="./activities/{{id}}">
-        <div class="card-header">
-          <h1 class="card-heading">{{title}}</h1>
-        </div>
-        <div class="card-body">
-          <img class="img_url" src="{{img_url}}" alt="{{title}}">
-       	</div>
-      </a>
+
+<div class="row">
+  <ul>
+    {{#each allActivities}}
+    <li>
+    <div class="col-md-4">
+
+      <div class="card">
+        <div class="card-content">
+          <a href="./activities/{{id}}">
+            <div class="card-header">
+              <h1 class="card-heading">{{title}}</h1>
+            </div>
+            <div class="card-body">
+              <img class="img_url" src="{{img_url}}" alt="{{title}}">
+            </div>
+          </a>
 
           <div class="well text-center">
             <span class="label label-primary">{{time}}</span>
@@ -21,8 +49,11 @@
             <span class="label label-warning">{{location}}</span>
             <span class="label label-danger">{{energy}}</span>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-  {{/each}}
+    </li>
+    {{/each}}
+
+  </ul>
 </div>
