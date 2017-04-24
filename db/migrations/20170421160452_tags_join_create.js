@@ -1,5 +1,5 @@
 
-exports.up = function(knex, Promise) {
+exports.up = function (knex) {
   return knex.schema.createTable('tags_join', (table) => {
     table.increments()
     table.integer('activity_id').notNullable()
@@ -8,6 +8,6 @@ exports.up = function(knex, Promise) {
   })
 }
 
-exports.down = function(knex, Promise) {
+exports.down = function (knex) {
   return knex.schema.dropTable('tags_join')
 }

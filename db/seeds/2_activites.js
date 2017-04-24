@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex) {
   return knex('activities').del()
     .then(function () {
       return knex('activities').insert([
@@ -18,15 +18,15 @@ exports.seed = function(knex, Promise) {
         {
           id: 5, title: 'Casino Night!', description: 'Find the nearest casino to you, dress up, and get over there! Bring cash and cigarettes and don\'t forget to tip your dealer', cost: '💰💰💰', energy: '⚡️⚡️⚡️', time: '⏰ ⏰ ⏰', location: '🏠', party: '👯', adult: true, img_url: 'https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/11374630_1868753643350557_935003662_n.jpg', creator_id: 3
         },
-         {
-           id: 6, title: 'Dog Park', description: 'Don\'t have a dog? Find a dog! They don\'t quite let people just into the dog park. So find a friend who has a dog, and either invite the two of them to come along, or offer to give them the day off. Grab some friends, grab a tennis ball, and go play.', cost: '💰', energy: '⚡️⚡️', time: '⏰', location: '🌳', party: '👯', adult: false, img_url: 'https://s-media-cache-ak0.pinimg.com/originals/9f/be/e5/9fbee54170da7b16b0c4558ba15fff30.jpg', creator_id: 3
-         }
+        {
+          id: 6, title: 'Dog Park', description: 'Don\'t have a dog? Find a dog! They don\'t quite let people just into the dog park. So find a friend who has a dog, and either invite the two of them to come along, or offer to give them the day off. Grab some friends, grab a tennis ball, and go play.', cost: '💰', energy: '⚡️⚡️', time: '⏰', location: '🌳', party: '👯', adult: false, img_url: 'https://s-media-cache-ak0.pinimg.com/originals/9f/be/e5/9fbee54170da7b16b0c4558ba15fff30.jpg', creator_id: 3
+        }
       ])
     }).then(function () {
-        return knex.raw(
+      return knex.raw(
           "SELECT setval('activities_id_seq', (SELECT MAX (id) FROM activities))"
       )
-  }).catch(function (error) {
-      console.error("Oops! ", error)
-  })
+    }).catch(function (error) {
+      console.error('Oops! ', error)
+    })
 }

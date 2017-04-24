@@ -1,5 +1,5 @@
 
-exports.seed = function(knex, Promise) {
+exports.seed = function (knex) {
   return knex('users').del()
     .then(function () {
       return knex('users').insert([
@@ -8,10 +8,10 @@ exports.seed = function(knex, Promise) {
         {id: 3, username: 'amaliaclaire', email: 'amaliaclaire@email.com', hashed_pw: '', avatar_url: 'http://fillmurray.com/80/80'}
       ])
     }).then(function () {
-        return knex.raw(
+      return knex.raw(
           "SELECT setval('users_id_seq', (SELECT MAX (id) FROM users))"
       )
-  }).catch(function (error) {
-      console.error("Oops! ", error)
-  })
+    }).catch(function (error) {
+      console.error('Oops! ', error)
+    })
 }
