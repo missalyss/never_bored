@@ -4,9 +4,10 @@ var knex = require('../db/connection')
 var bcrypt = require('bcrypt-as-promised')
 
 /* GET users listing. */
-router.get('/', (req, res, next) => {
-  knex('users').then((allUsers) => {
-    res.render('users/user', {allUsers})
+router.get('/:id', (req, res, next) => {
+  var id = req.params.id
+  knex('users').where('id', id).then((thisUser) => {
+    res.render('users/user', {thisUser})
   })
 })
 
@@ -25,7 +26,7 @@ router.post('/', (req, res, next) => {
   .then((users) => {
     var user = users[0]
     delete user.hashed_pw
-    res.json(user)
+    res.redirect('/user')
   }).catch((err) => {
     next(err)
   })
