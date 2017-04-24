@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 
 router.get('/data', (req, res, next) => {
   knex('activities').then((activityData) => {
-    console.log(activityData);
+    console.log(activityData)
     res.json(activityData)
   })
 })
