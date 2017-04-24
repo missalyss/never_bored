@@ -1,21 +1,18 @@
+var activityData;
 
-function testGet () {
-  var incomingData = ajaxCall()
-  console.log('//////////////////////');
-  console.log(incomingData);
-}
-
-$('#cost').click(testGet)
-
-function ajaxCall() {
+(function ajaxCall () {
   $.ajax({
     url: 'http://localhost:3223/search/data',
     method: 'GET'
   }).then(function (result) {
-    console.log('ajax');
-    console.log(result);
-      return result
+    activityData = result
   }).catch(function (error) {
     console.log('Error: ', error)
   })
+})()
+
+$('#cost').click(testGet)
+
+function testGet () {
+  console.log(activityData)
 }
