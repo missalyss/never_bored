@@ -38,21 +38,27 @@ router.post('/', (req, res, next) => {
   })
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/delete/:id', (req, res, next) => {
   var id = req.params.id
-  knex('users').del().where('id', id).then(() =>{
-    res.resdirect('/')
+  var password = req.body.password
+  console.log(password, id)
+  var user
+  knex('users').where('id', id).first()
+  .then((row) => {
+    user = row
+    console.log(user)
+    return bcrypt.compare(password, user.hashed_pw)
+  })
+  .then(() => {
+    knex('users').del().where('user', user).then(() => {
+      res.resdirect('http://localhost:3223/')
+    })
   })
 })
 
-
-
-
 router.post('/session', (req, res, next) => {
   var { username, password } = req.body
-
   var user
-
   knex('users').where('username', username).first()
   .then((row) => {
     if (!row) {
@@ -61,14 +67,11 @@ router.post('/session', (req, res, next) => {
         message: 'Bad username or password'
       }
     }
-
     user = row
-
     return bcrypt.compare(password, user.hashed_pw)
   })
   .then(() => {
     delete user.hashed_pw
-    // req.session.userId = user.id
     console.log(user)
     res.redirect(`/users/${user.id}`)
   })
