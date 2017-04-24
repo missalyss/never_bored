@@ -5,33 +5,33 @@ exports.seed = function (knex) {
       return knex('tags_join').insert([
         {
           id: 1,
-          activities_id: 1,
-          categories_id: 3
+          activity_id: 1,
+          category_id: 3
         },
         {
           id: 2,
-          activities_id: 2,
-          categories_id: 2
+          activity_id: 2,
+          category_id: 2
         },
         {
           id: 3,
-          activities_id: 3,
-          categories_id: 4
+          activity_id: 3,
+          category_id: 4
         },
         {
           id: 4,
-          activities_id: 4,
-          categories_id: 5
+          activity_id: 4,
+          category_id: 5
         },
         {
           id: 5,
-          activities_id: 5,
-          categories_id: 3
+          activity_id: 5,
+          category_id: 3
         },
         {
           id: 6,
-          activities_id: 6,
-          categories_id: 1
+          activity_id: 6,
+          category_id: 1
         }
       ])
     }).then(function () {
