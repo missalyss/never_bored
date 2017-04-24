@@ -6,6 +6,9 @@ var bcrypt = require('bcrypt-as-promised')
 /* GET users listing. */
 
 router.get('/delete/:id', (req, res, next) => {
+  knex('users').where('id', req.params.id).then((thisUser) => {
+
+  })
   res.render('users/delete')
 })
 
@@ -47,12 +50,15 @@ router.delete('/delete/:id', (req, res, next) => {
   .then((row) => {
     user = row
     console.log(user)
-    return bcrypt.compare(password, user.hashed_pw)
-  })
-  .then(() => {
-    knex('users').del().where('user', user).then(() => {
-      res.resdirect('http://localhost:3223/')
+    bcrypt.compare(password, user.hashed_pw)
+    knex('users').where('user', user).del().then(() => {
+      res.resdirect('/')
     })
+  }).catch(bcrypt.MISMATCH_ERROR, () => {
+    throw { status: 400, message: 'Bad username or password' }
+  })
+  .catch((err) => {
+    next(err)
   })
 })
 
@@ -62,10 +68,7 @@ router.post('/session', (req, res, next) => {
   knex('users').where('username', username).first()
   .then((row) => {
     if (!row) {
-      throw {
-        status: 400,
-        message: 'Bad username or password'
-      }
+      throw { status: 400, message: 'Bad username or password' }
     }
     user = row
     return bcrypt.compare(password, user.hashed_pw)
@@ -76,10 +79,7 @@ router.post('/session', (req, res, next) => {
     res.redirect(`/users/${user.id}`)
   })
   .catch(bcrypt.MISMATCH_ERROR, () => {
-    throw {
-      status: 400,
-      message: 'Bad username or password'
-    }
+    throw { status: 400, message: 'Bad username or password' }
   })
   .catch((err) => {
     next(err)
