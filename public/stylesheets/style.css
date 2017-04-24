@@ -26,6 +26,11 @@ a {
           transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.card-heading {
+  color: #0d174a;
+  text-decoration: none;
+}
+
 .card-body{
  margin: 1em;
  text-align: center;
@@ -33,4 +38,15 @@ a {
 
 .img_url {
   height: 280px;
+}
+
+.label {
+  font-size: 1.3em;
+}
+
+.background-shade{
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  border-radius: 4px;
+  text-align: center;
 }

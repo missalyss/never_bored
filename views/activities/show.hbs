@@ -1,0 +1,24 @@
+<div class="background-shade">
+
+    <div class="row">
+      {{#each thisActivity}}
+      <div class="col-lg-5">
+        <h1 >{{title}}</h1>
+        <img class="img_url" src="{{img_url}}" alt="{{title}}">
+      </div>
+      <div class="col-lg-6">
+        <p>{{description}}</p>
+
+        <p>  <span class="label label-primary">Time: {{time}}</span>
+          <span class="label label-success">Cost: {{cost}}</span>
+          <span class="label label-info">Who to go with: {{party}}</span>
+        </p>
+        <p></br>
+          <span class="label label-warning">Inside or Outside: {{location}}</span>
+          <span class="label label-danger">Energy level: {{energy}}</span>
+        </p>
+      </div>
+      {{/each}}
+    </div>
+
+</div>
