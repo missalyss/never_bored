@@ -10,20 +10,21 @@ router.get('/', (req, res, next) => {
   })
 })
 
-router.post('/users', (req, res, next) => {
-  bcrypt.has(req.body.password, 12)
+router.post('/', (req, res, next) => {
+  bcrypt.hash(req.body.password, 12)
   .then((hashed_pw) => {
     var newUser = {
       username: req.body.username,
       email: req.body.email,
       hashed_pw: hashed_pw,
-      avatar_url: req.body.avatar_url
+      avatar_url: 'http://fillmurray.com/80/80'
     }
+    console.log(newUser)
     return knex('users').insert(newUser, '*')
   })
   .then((users) => {
     var user = users[0]
-    delete user.hashed_password
+    delete user.hashed_pw
     res.json(user)
   }).catch((err) => {
     next(err)
