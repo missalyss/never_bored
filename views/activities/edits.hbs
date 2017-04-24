@@ -1,0 +1,90 @@
+
+<form method="POST" action="/activities/{{activity.id}}?_method=PUT" class="well">
+  <div class="form-group">
+    <label for="title">Title</label> <input id="title" name="title"type="text" class="form-control" value="{{activity.title}}">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label> <input id="description" name="description" type="text" class="form-control" value="{{activity.description}}">
+  </div>
+
+<!-- Emoji's -->
+<p><strong>Cost</strong></p>
+<label class="form-check-label" for="cost1">
+<input class="form-check-input" id="cost1" type="radio" name="cost" value="💰">💰</label></br>
+
+<label class="form-check-label" for="cost2">
+<input class="form-check-input" id="cost2" type="radio" name="cost" value="💰💰">💰💰</label></br>
+
+<label class="form-check-label" for="cost3">
+<input class="form-check-input" id="cost3" type="radio" name="cost" value="💰💰💰">💰💰💰</label></br>
+
+<p><strong>Energy</strong></p>
+<label class="form-check-label" for="energy1">
+<input class="form-check-input" id="energy1" type="radio" name="energy" value="1">⚡️</label></br>
+
+<label class="form-check-label" for="energy2">
+<input class="form-check-input" id="energy2" type="radio" name="energy" value="2">⚡️⚡️</label></br>
+
+<label class="form-check-label" for="energy3">
+<input class="form-check-input" id="energy3" type="radio" name="energy" value="3">⚡️⚡️⚡️</label></br>
+
+<p><strong>Time</strong></p>
+<label class="form-check-label" for="time1">
+<input class="form-check-input" id="time1" type="radio" name="time" value="1">⏰</label></br>
+
+<label class="form-check-label" for="time2">
+<input class="form-check-input" id="time2" type="radio" name="time" value="2">⏰⏰</label></br>
+
+<label class="form-check-label" for="time3">
+<input class="form-check-input" id="time3" type="radio" name="time" value="3">⏰⏰⏰</label></br>
+
+<p><strong>Location</strong></p>
+<label class="form-check-label" for="location1">
+<input class="form-check-input" id="location1" type="radio" name="location" value="outdoors">🌳</label></br>
+
+<label class="form-check-label" for="location2">
+<input class="form-check-input" id="location2" type="radio" name="location" value="indoors">🏡</label></br>
+
+
+<p><strong>party</strong></p>
+<label class="form-check-label" for="adult">
+<input class="form-check-input" id="party" type="radio" name="party" value="dating">💑</label></br>
+
+<label class="form-check-label" for="friends">
+<input class="form-check-input" id="party" type="radio" name="party" value="friends">👯</label></br>
+
+<label class="form-check-label" for="family">
+<input class="form-check-input" id="party" type="radio" name="party" value="family">👨‍👩‍👦‍👦</label></br>
+
+<label class="form-check-label" for="solo">
+<input class="form-check-input" id="party" type="radio" name="party" value="solo">🙋</label></br>
+
+<p><strong>adult</strong></p>
+<label class="form-check-label" for="adult">
+<input class="form-check-input" id="adult" type="radio" name="adult" value="true">💑</label></br>
+
+<label class="form-check-label" for="friends">
+<input class="form-check-input" id="adult" type="radio" name="adult" value="false">👯</label></br>
+
+
+
+
+
+<!-- avatar pictures -->
+  <div class="form-group">
+    <label for="img_url">Img_url</label> <input id="img_url" name="img_url" type="string" class="form-control" value="{{activity.img_url}}">
+  </div>
+
+  <div class="form-group">
+    <label for="creator_id">Creator_id</label> <input id="creator_id" name="creator_id" type="string" class="form-control" value="{{activity.creator_id}}">
+  </div>
+
+  <div class="form-group">
+    <input id="submit" type="submit">
+  </div>
+
+</form>
+
+<script src="/js/jquery-3.2.0.min.js" charset="utf-8"></script>
+<script src="/js/requests.js" charset="utf-8"></script>
+<script type="text/javascript">

@@ -1,5 +1,6 @@
 
 <div class="row">
+
   {{#each allActivities}}
   <div class="col-md-4">
 
@@ -21,6 +22,16 @@
             <span class="label label-warning">{{location}}</span>
             <span class="label label-danger">{{energy}}</span>
           </div>
+
+          <form action="/activities/{{id}}?_method=DELETE" method="POST">
+         <input class="btn btn-sm btn-danger" type="submit" name="delete" value="Delete Activity">
+          </form>
+
+
+           <a href="activities/{{id}}/edits"><button class="btn btn-sm btn-danger">Edit Activity</button></a>
+
+
+       </form>
       </div>
     </div>
   </div>
