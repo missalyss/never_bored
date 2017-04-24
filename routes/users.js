@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt-as-promised')
 
 /* GET users listing. */
 
-router.get('/:id/delete', (req, res, next) => {
+router.get('/delete/:id', (req, res, next) => {
   res.render('users/delete')
 })
 
@@ -42,6 +42,44 @@ router.delete('/:id', (req, res, next) => {
   var id = req.params.id
   knex('users').del().where('id', id).then(() =>{
     res.resdirect('/')
+  })
+})
+
+
+
+
+router.post('/session', (req, res, next) => {
+  var { username, password } = req.body
+
+  var user
+
+  knex('users').where('username', username).first()
+  .then((row) => {
+    if (!row) {
+      throw {
+        status: 400,
+        message: 'Bad username or password'
+      }
+    }
+
+    user = row
+
+    return bcrypt.compare(password, user.hashed_pw)
+  })
+  .then(() => {
+    delete user.hashed_pw
+    // req.session.userId = user.id
+    console.log(user)
+    res.redirect(`/users/${user.id}`)
+  })
+  .catch(bcrypt.MISMATCH_ERROR, () => {
+    throw {
+      status: 400,
+      message: 'Bad username or password'
+    }
+  })
+  .catch((err) => {
+    next(err)
   })
 })
 
