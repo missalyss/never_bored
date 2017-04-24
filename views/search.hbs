@@ -10,7 +10,7 @@
         <label>All</label>
     </li>
     <li>
-        <input checked="true" type="checkbox" value="food"/>
+        <input id="cost" checked="true" type="checkbox" value="cost"/>
         <label>Food</label>
     </li>
     <li>
@@ -29,7 +29,8 @@
   <ul>
     {{#each allActivities}}
     <li>
-    <div class="col-md-4">
+    <div class="col-md-4 infotest"
+      data-category="{{ cost }}">
 
       <div class="card">
         <div class="card-content">
