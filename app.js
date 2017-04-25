@@ -17,6 +17,7 @@ var users = require('./routes/users')
 var activities = require('./routes/activities')
 var categories = require('./routes/categories')
 var search = require('./routes/search')
+var favorites = require('./routes/favorites')
 var methodOverride = require('method-override')
 
 var app = express()
@@ -43,6 +44,7 @@ app.use('/users', users)
 app.use('/activities', activities)
 app.use('/categories', categories)
 app.use('/search', search)
+app.use('/favorites', favorites)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
