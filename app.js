@@ -1,9 +1,16 @@
+'use strict'
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 var express = require('express')
 var path = require('path')
 // var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var cookieSession = require('cookie-session')
 
 var index = require('./routes/index')
 var users = require('./routes/users')
@@ -23,6 +30,10 @@ app.set('view engine', 'hbs')
 app.use(logger('dev'))
 app.use(methodOverride('_method'))
 app.use(bodyParser.json())
+app.use(cookieSession({                          // NEW
+  name: 'trackify',
+  secret: process.env.SESSION_SECRET
+}))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
