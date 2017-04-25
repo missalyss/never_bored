@@ -8,8 +8,11 @@
   </head>
   <body>
 
-
-{{> unauthNav}}
+  {{#if user.userId }}
+    {{> authNav}}
+  {{else}}
+    {{> unauthNav}}
+  {{/if}}
 
       {{{body}}}
     </div>

@@ -18,8 +18,8 @@ router.get('/', authorize, (req, res, next) => {
 
   var userId = req.session.userId
   console.log(userId, req.session.userId)
-
-    res.send('hi')
+  res.render('login', { user: req.session })
+    // res.send('hi')
   // knex('playlists')
   //   .innerJoin('tracks', 'tracks.id', 'playlists.track_id')
   //   .where('favorites_join.user_id', userId)
