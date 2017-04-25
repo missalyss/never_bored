@@ -2,31 +2,69 @@
 <!--  -->
 
 <div class="row">
-  <h1>Filter</h1>
-  <ul id="categoryFilters" class="filterSection">
-    <strong>Show:</strong>
-    <li>
-        <input class="checkbox" checked="true" type="checkbox" value="all"/>
-        <label>All</label>
-    </li>
-    <li>
-        <input class="checkbox" id="relaxing" checked="false" type="checkbox" value="Relaxing"/>
-        <label>Relaxing</label>
-    </li>
-    <!-- <li>
-        <input class="checkbox" id="social" checked="false" type="checkbox" value="social"/>
-        <label>Social</label>
-    </li> -->
-</ul>
+    <h1>Filter</h1>
+    <!-- Categories -->
+    <div class="col-xs-4">
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Active" id="Active" /> Active</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Creative" id="Creative" /> Creative</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Entertainment" id="Entertainment" /> Entertainment</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Food" id="Food" /> Food</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Relaxing" id="Relaxing" /> Relaxing</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Romantic" id="Romantic" /> Romantic</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Social" id="Social" /> Social</label>
+        </form>
+    </div>
+    <!-- Attributes -->
+    <!-- Cost -->
+    <div class="col-xs-4">
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰" id="💰" /> 💰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰💰" id="💰💰" /> 💰💰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰💰💰" id="💰💰💰" /> 💰💰💰</label>
+        </form>
+    </div>
+    <!-- Energy -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️" id="⚡️" /> ⚡️</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️⚡️" id="⚡️⚡️" /> ⚡️⚡️</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️⚡️⚡️" id="⚡️⚡️⚡️" /> ⚡️⚡️⚡️</label>
+        </form>
+    </div>
 </div>
 
-
+<!--  -->
+<!--  -->
 <div class="row">
   <ul>
     {{#each allActivities}}
-    <div class="col-md-4 infotest"
-      data-category="{{ name }}">
-
+    <div class="col-md-4 activity"
+      data-id="{{ title }}"
+      data-category="{{ name }} {{ cost }} {{energy}}">
       <div class="card">
         <div class="card-content">
           <a href="./activities/{{id}}">
