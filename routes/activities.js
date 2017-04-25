@@ -41,9 +41,18 @@ router.post('/', (req, res, next)=>{
     creator_id: req.body['creator_id']
   }
 
+  var addCategory = {
+    category_id: parseInt(req.body['select_categories'])
+  }
+
+
 knex('activities').insert(createActivity, '*').then(newActivity =>{
   var id = newActivity[0].id
-  res.redirect(`activities/${id}`)
+  addCategory.activity_id = id
+  knex('tags_join').insert(addCategory, '*').then(()=>{
+
+    res.redirect(`activities/${id}`)
+    })
   })
 })
 
