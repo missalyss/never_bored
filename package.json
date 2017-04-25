@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www",
+    "dev": "nodemon --ext js,hbs ./bin/www",
     "knex": "knex",
     "lint": "./node_modules/.bin/eslint"
   },
@@ -15,6 +15,7 @@
     "debug": "~2.6.3",
     "express": "~4.15.2",
     "hbs": "~4.0.1",
+    "hbs-utils": "0.0.4",
     "knex": "^0.12.9",
     "method-override": "^2.3.8",
     "morgan": "~1.8.1",

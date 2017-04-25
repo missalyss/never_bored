@@ -3,8 +3,7 @@ var router = express.Router()
 var knex = require('../db/connection')
 var bcrypt = require('bcrypt-as-promised')
 
-/* GET users listing. */
-
+//render users' delete page
 router.get('/delete/:id', (req, res, next) => {
   knex('users').where('id', req.params.id).then((thisUser) => {
 
@@ -12,6 +11,7 @@ router.get('/delete/:id', (req, res, next) => {
   res.render('users/delete')
 })
 
+//render user
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
   knex('users').where('id', id).then((thisUser) => {
@@ -19,6 +19,7 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
+//register user
 router.post('/', (req, res, next) => {
   bcrypt.hash(req.body.password, 12)
   .then((hashed_pw) => {
@@ -41,6 +42,7 @@ router.post('/', (req, res, next) => {
   })
 })
 
+//delete user
 router.delete('/delete/:id', (req, res, next) => {
   var id = req.params.id
   var password = req.body.password
@@ -62,6 +64,7 @@ router.delete('/delete/:id', (req, res, next) => {
   })
 })
 
+//user login
 router.post('/session', (req, res, next) => {
   var { username, password } = req.body
   var user
@@ -85,11 +88,6 @@ router.post('/session', (req, res, next) => {
   .catch((err) => {
     next(err)
   })
-})
-
-router.delete('/session', (req, res, next) => {
-  req.session = null
-  res.redirect('/')
 })
 
 module.exports = router
