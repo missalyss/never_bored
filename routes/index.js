@@ -5,7 +5,13 @@ var knex = require('../db/connection')
 /* GET home page. */
 router.get('/', (req, res, next) => {
   knex('activities').then((allActivities) => {
-    res.render('index', { allActivities })
+    knex('categories').then((allCategories)=>{
+
+
+      data = {allActivities, allCategories }
+      console.log(data)
+      res.render('index', {data} )
+    })
   })
 })
 
