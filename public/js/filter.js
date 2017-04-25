@@ -1,18 +1,29 @@
-var activityData;
+// var catValue
 
-(function ajaxCall () {
-  $.ajax({
-    url: 'http://localhost:3223/search/data',
-    method: 'GET'
-  }).then(function (result) {
-    activityData = result
-  }).catch(function (error) {
-    console.log('Error: ', error)
-  })
-})()
+//
+// $('#relaxing').click(testHideCategory)
+//
+// function testHideCategory () {
+  // let cTypes = $("selected")
+  // console.log('This works')
+  // var catName = $('.infotest').attr('data-category')
+  // console.log(catName)
+//   // if (catName === 'Relaxing') {
+//     $("div[data-category='Relaxing']").hide()
+//   // }
+// }
 
-$('#cost').click(testGet)
 
-function testGet () {
-  console.log(activityData)
+$('.checkbox').click(function () {
+  var catValue = $(this).val()
+  console.log(catValue);
+  // var catValue = $('input[type="checkbox"]').val()
+  // console.log(catValue);
+  functionHide(catValue)
+
+
+})
+
+function functionHide (catValue) {
+    $(`div[data-category="${catValue}"]`).toggle()
 }

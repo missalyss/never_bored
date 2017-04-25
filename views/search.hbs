@@ -3,24 +3,20 @@
 
 <div class="row">
   <h1>Filter</h1>
-  <ul class="filterSection">
+  <ul id="categoryFilters" class="filterSection">
     <strong>Show:</strong>
     <li>
-        <input checked="true" type="checkbox" value="all"/>
+        <input class="checkbox" checked="true" type="checkbox" value="all"/>
         <label>All</label>
     </li>
     <li>
-        <input id="cost" checked="true" type="checkbox" value="cost"/>
-        <label>Food</label>
+        <input class="checkbox" id="relaxing" checked="false" type="checkbox" value="Relaxing"/>
+        <label>Relaxing</label>
     </li>
-    <li>
-        <input checked="true" type="checkbox" value="place"/>
-        <label>Place</label>
-    </li>
-    <li>
-        <input checked="true" type="checkbox" value="musician"/>
-        <label>Musician</label>
-    </li>
+    <!-- <li>
+        <input class="checkbox" id="social" checked="false" type="checkbox" value="social"/>
+        <label>Social</label>
+    </li> -->
 </ul>
 </div>
 
@@ -28,9 +24,8 @@
 <div class="row">
   <ul>
     {{#each allActivities}}
-    <li>
     <div class="col-md-4 infotest"
-      data-category="{{ cost }}">
+      data-category="{{ name }}">
 
       <div class="card">
         <div class="card-content">
@@ -53,7 +48,6 @@
         </div>
       </div>
     </div>
-    </li>
     {{/each}}
 
   </ul>
