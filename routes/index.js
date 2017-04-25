@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
 
       data = {allActivities, allCategories }
       console.log(data)
-      res.render('index', {data} )
+      res.render('index', data )
     })
   })
 })
