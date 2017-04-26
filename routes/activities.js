@@ -97,7 +97,10 @@ router.put('/:id', (req, res, next) =>{
     // var id = editActivity[0].id
     // editCategories.activity_id  = id
 
-    knex('tags_join').update(editCategories, '*').then(()=>{
+    knex('tags_join')
+    .where('activity_id', id) // we need this to select the particular activity id 
+    .update(editCategories, '*')
+    .then(()=>{
 
       res.redirect(`/activities/${id}`)
     })
