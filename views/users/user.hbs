@@ -1,18 +1,25 @@
 
-<div class="background-shade">
+<h1>My Account</h1>
   {{#each thisUser}}
   <div class="row">
-  <div class="col-md-4">
-    <img src="{{avatar_url}}" height="150 px" alt="{{username}} avatar">
-  </div>
-  <div class="col-md-4">
-    <h2>{{username}}</h2>
-    <h2>{{email}}</h2>
-  </div>
+    <div class="col-lg-4">
+      <img src="{{avatar_url}}" alt="{{username}} avatar">
+    </div>
+    <div class="col-lg-4">
+      <h2>{{username}}</h2>
+      <h2>{{email}}</h2>
+    </div>
+    <div class="col-lg-4">
+      <a href="#" class="btn btn-info">My Posted Activities</a>
+      <br>
+      <hr />
+      <a href="#" class="btn btn-info">My Settings</a>
+      <br>
+      <hr />
+      <a href="./delete/{{id}}" class="btn btn-info">Delete My Account</a>
+    </div>
   </div>
   <div class="row">
-    <span class="label label-primary"><a href="./delete/{{id}}">Delete My Account</a></span>
 
   </div>
   {{/each}}
-</div>

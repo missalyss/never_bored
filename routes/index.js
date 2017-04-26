@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
   .innerJoin('categories', 'tags_join.category_id', 'categories.id')
   .orderBy('activities.id', 'asc')
   .then(allActivities => {
-    console.log(allActivities)
+    // console.log(allActivities)
     res.render('index', { allActivities })
   }).catch(err => {
     next(err)

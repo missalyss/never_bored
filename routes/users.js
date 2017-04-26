@@ -27,7 +27,7 @@ router.post('/', (req, res, next) => {
       username: req.body.username,
       email: req.body.email,
       hashed_pw: hashed_pw,
-      avatar_url: 'http://fillmurray.com/80/80'
+      avatar_url: req.body.avatar_url
     }
     console.log(newUser)
     return knex('users').insert(newUser, '*')
