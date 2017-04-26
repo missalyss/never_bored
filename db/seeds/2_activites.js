@@ -4,7 +4,7 @@ exports.seed = function (knex) {
     .then(function () {
       return knex('activities').insert([
         {
-          id: 1, title: 'Bad Movies Series', description: 'Who doesn\'t love to make fun of terrible movies with their friends? Try this series of bad movies, either as a marathon or a weekly event. 1. The Room 2. Troll 2 3. Birdemic 4. Titanic 2. Time commitment refers to each film, not the series.', cost: '💰💰💰', energy: '⚡️', time: '⏰⏰', location: '🏠', party: '👯', adult: 'Yes', img_url: 'https://s-media-cache-ak0.pinimg.com/736x/57/db/f7/57dbf7bc5df8e6ae737ca3480cb7f430.jpg', creator_id: 1
+          id: 1, title: 'Bad Movies Series', description: 'Who doesn\'t love to make fun of terrible movies with their friends? Try this series of bad movies, either as a marathon or a weekly event. 1. The Room 2. Troll 2 3. Birdemic 4. Titanic 2. Time commitment refers to each film, not the series.', cost: '💰', energy: '⚡️', time: '⏰⏰', location: '🏠', party: '👯', adult: 'Yes', img_url: 'https://s-media-cache-ak0.pinimg.com/736x/57/db/f7/57dbf7bc5df8e6ae737ca3480cb7f430.jpg', creator_id: 1
         },
         {
           id: 2, title: 'Sidewalk Chalk', description: 'Go outside with some sidewalk chalk with the kids and start building! Make a hop scotch, or a city, or a zoo filled with animals.', cost: '💰', energy: '⚡️⚡️', time: '⏰⏰', location: '🌳', party: '👨‍👩‍👧‍👦', adult: 'No', img_url: 'https://s-media-cache-ak0.pinimg.com/564x/1e/f4/64/1ef4647e3a8a1397834e9dc70440de13.jpg', creator_id: 1
