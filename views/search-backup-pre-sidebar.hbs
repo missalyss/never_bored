@@ -1,9 +1,116 @@
 <script defer type="text/javascript" src="/js/filter.js"></script>
 <!--  -->
+
+<div class="row">
+    <h1>Filter</h1>
+    <!-- Categories -->
+    <div class="col-xs-4">
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Active" id="Active" /> Active</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Creative" id="Creative" /> Creative</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Entertainment" id="Entertainment" /> Entertainment</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Food" id="Food" /> Food</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Relaxing" id="Relaxing" /> Relaxing</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Romantic" id="Romantic" /> Romantic</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="categ" value="Social" id="Social" /> Social</label>
+        </form>
+    </div>
+    <!-- Attributes -->
+    <!-- Cost -->
+    <div class="col-xs-4">
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰" id="💰" /> 💰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰💰" id="💰💰" /> 💰💰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="attrib" value="💰💰💰" id="💰💰💰" /> 💰💰💰</label>
+        </form>
+    </div>
+    <!-- Energy -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️" id="⚡️" /> ⚡️</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️⚡️" id="⚡️⚡️" /> ⚡️⚡️</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="energy" value="⚡️⚡️⚡️" id="⚡️⚡️⚡️" /> ⚡️⚡️⚡️</label>
+        </form>
+    </div>
+    <!-- time -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰" id="⏰" /> ⏰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰⏰" id="⏰⏰" /> ⏰⏰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰⏰⏰" id="⏰⏰⏰" /> ⏰⏰⏰</label>
+        </form>
+    </div>
+    <!-- Location -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="location" value="🌳" id="🌳" /> 🌳</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="location" value="🏠" id="🏠" /> 🏠</label>
+        </form>
+    </div>
+    <!-- Party -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="👯" id="👯" /> 👯</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="👨‍👩‍" id="👨‍👩‍" /> 👨‍👩‍</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="💑" id="💑" /> 💑</label>
+      <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="🙋'" id="🙋" /> 🙋'</label>
+        </form>
+    </div>
+    <!-- Adult -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="adult" value="true" id="adultTrue" />Yes</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="false" id="adultFalse" /> No‍</label>
+        </form>
+    </div>
+</div>
+
 <!--  -->
   <div id="sidebar">
       <div class="col-md-12">
-            <h2>Filter</h2>
+        <div class="row">
+            <h1>Filter</h1>
             <!-- Categories -->
             <!-- <div class="col-xs-4"> -->
                 <form>
@@ -105,23 +212,26 @@
               <input type="checkbox" name="party" value="false" id="adultFalse" /> No‍</label>
                 </form>
             <!-- </div> -->
+        </div>
       </div>
   </div>
   <div id="main">
       <div class="col-md-12">
-        <!-- <div class="row"> -->
+        <div class="row">
             {{#each allActivities}}
             <div class="col-md-6 activity"
               data-id="{{ title }}"
               data-category="{{ name }} {{ cost }} {{energy}} {{time}} {{location}} {{party}} {{adult}}">
-              <div class=" panel panel-default">
-                <div class="panel-heading">
-                  <a href="./activities/{{id}}">{{title}}</a>
-                </div>
-                <div class="panel-body">
-                    <img class="img_url" src="{{img_url}}" alt="{{title}}">
-
-
+              <div class=" panel panel default">
+                <div class="card-content">
+                  <a href="./activities/{{id}}">
+                    <div class="panel-heading">
+                      <h1 class="card-heading">{{title}}</h1>
+                    </div>
+                    <div class="panel-body">
+                      <img class="img_url" src="{{img_url}}" alt="{{title}}">
+                    </div>
+                  </a>
 
                   <div class="well text-center">
                     <span class="label label-primary">{{time}}</span>
@@ -134,11 +244,44 @@
                     <span class="label label-info">{{name}}</span>
                   </div>
                 </div>
-                </div>
               </div>
-            <!-- </div> -->
+            </div>
             {{/each}}
         </div>
       </div>
   </div>
 <!--  -->
+<div class="row">
+  break
+</div>
+<div class="row">
+    {{#each allActivities}}
+    <div class="col-md-6 activity"
+      data-id="{{ title }}"
+      data-category="{{ name }} {{ cost }} {{energy}} {{time}} {{location}} {{party}} {{adult}}">
+      <div class=" panel panel default">
+        <div class="card-content">
+          <a href="./activities/{{id}}">
+            <div class="panel-heading">
+              <h1 class="card-heading">{{title}}</h1>
+            </div>
+            <div class="panel-body">
+              <img class="img_url" src="{{img_url}}" alt="{{title}}">
+            </div>
+          </a>
+
+          <div class="well text-center">
+            <span class="label label-primary">{{time}}</span>
+            <span class="label label-success">{{cost}}</span>
+            <span class="label label-info">{{party}}</span>
+            <span class="label label-warning">{{location}}</span>
+            <span class="label label-danger">{{energy}}</span>
+          </div>
+          <div>
+            <span class="label label-info">{{name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+</div>
