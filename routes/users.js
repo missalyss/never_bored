@@ -36,7 +36,7 @@ router.post('/', (req, res, next) => {
     var user = users[0]
     delete user.hashed_pw
     req.session.userId = user.id
-    res.redirect(`/users/${user.id}`)
+    res.redirect(`/`)
   }).catch((err) => {
     next(err)
   })
@@ -80,7 +80,7 @@ router.post('/session', (req, res, next) => {
     delete user.hashed_pw
     req.session.userId = user.id
     console.log(user, req.session)
-    res.redirect(`/users/${user.id}`)
+    res.redirect(`/`)
   })
   .catch(bcrypt.MISMATCH_ERROR, () => {
     throw { status: 400, message: 'Bad username or password' }
