@@ -1,25 +1,44 @@
-<div class="background-shade">
+<div class="col-md-12">
+  <ul class="breadcrumb">
+  <li><a href="/">Return to Activity Index</a></li>
+  <li class="active">{{activityIndividual.title}}</li>
+</ul>
 
-    <div class="row">
-      {{#each thisActivity}}
-        <div class="col-lg-5">
-          <h1 >{{title}}</h1>
-          <img class="img_url" src="{{img_url}}" alt="{{title}}">
+</div>
+<div class="col-md-8 col-md-offset-2">
+    {{#each thisActivity}}
+        <div class="panel panel-default" data-id="{{ title }}" data-category="{{ name }} {{ cost }} {{energy}} {{time}} {{location}} {{party}} {{adult}}">
+            <!-- panel default -->
+            <div class="panel-heading">
+                <!-- panel heading -->
+                <a class="thumb-title" href="#">{{title}}</a>
+            </div>
+            <!-- panel heading -->
+            <div class="panel-body text-center">
+                <!-- panel body -->
+                <div class="col-md-12">
+                    <img class="show-img_url" src="{{img_url}}" alt="{{title}}">
+                </div>
+                <div class="col-md-12 well show-well">
+                  <div class="col-md-4 text-center">
+                    <ul class="text-left">
+                      <li class="li-attr">Party: {{party}}</li>
+                      <li class="li-attr">Where: {{location}}</li>
+                      <li class="li-attr">Cost: {{cost}}</li>
+                      <li class="li-attr">Energy: {{energy}}</li>
+                      <li class="li-attr">Time: {{time}}</li>
+                      <li class="li-attr">Adult Oriented: {{adult}}</li>
+                    </ul>
+                    <span class="label label-primary">{{name}}</span>
+                  </div>
+                  <div class="col-md-8 text-left">
+                    <p>{{description}}</p>
+                  </div>
+
+                </div>
+            </div>
+            <!-- panel body -->
         </div>
-        <div class="col-lg-6">
-          <p>{{description}}</p>
-
-          <p>  <span class="label label-primary">Time: {{time}}</span>
-            <span class="label label-success">Cost: {{cost}}</span>
-            <span class="label label-info">Who to go with: {{party}}</span>
-          </p>
-          <p></br>
-            <span class="label label-warning">Inside or Outside: {{location}}</span>
-            <span class="label label-danger">Energy level: {{energy}}</span><br>
-            <span class="label label-danger">Category: {{name}}</span>
-          </p>
-        </div>
-      {{/each}}
-    </div>
-
+        <!-- panel default -->
+    {{/each}}
 </div>

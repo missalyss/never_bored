@@ -40,6 +40,10 @@ body {
   max-height: 180px;
 }
 
+.show-img_url {
+  max-height: 220px;
+}
+
 .sidebar-col {
   padding: 0px;
 }
@@ -97,6 +101,10 @@ padding-right: 0px
 .li-attr {
   padding: 0px;
   list-style: none;
+}
+
+.show-well {
+  margin-top: 10px;
 }
 
 #sidebar {
