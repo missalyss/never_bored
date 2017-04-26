@@ -8,14 +8,39 @@ router.get('/new', (req, res, next) =>{
   res.render('activities/new')
 })
 
-//get single id
-router.get('/:id', (req, res, next) => {
+
+router.get('/:id', (req, res, next)=>{
   var id = req.params.id
-  knex('activities').where('id', id).then((thisActivity) => {
+  // console.log(id);
+  knex('activities')
+  .select('activities.*', 'categories.name')
+  .innerJoin('tags_join', 'tags_join.activity_id', 'activities.id')
+  .innerJoin('categories', 'tags_join.category_id', 'categories.id' )
+  .where('activities.id', id)
+  .then(thisActivity =>{
+    var reworkActivity = thisActivity[0]
+    var categoryArray = thisActivity.map(function(element){
+      return element.name
+    })
+    reworkActivity.categoryArray = categoryArray;
+
     res.render('activities/show', {thisActivity})
-  })
+  }).catch(console.error)
 })
 
+// .select('*')
+
+
+//get single id ***** IN CASE CODE BREAKS UNCOMMENT THIS
+// router.get('/:id', (req, res, next) => {
+//   var id = req.params.id
+//   knex('activities').where('id', id).then((thisActivity) => {
+//     console.log(thisActivity);
+//
+//     // look at pass inner join lessons and add
+//     res.render('activities/show', {thisActivity})
+//   })
+// })
 
 //get to the edits page
 router.get('/:id/edits', (req, res, next) =>{
