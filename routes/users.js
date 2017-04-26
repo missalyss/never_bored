@@ -3,15 +3,15 @@ var router = express.Router()
 var knex = require('../db/connection')
 var bcrypt = require('bcrypt-as-promised')
 
-//render users' delete page
+// Render users' delete page
 router.get('/delete/:id', (req, res, next) => {
-  knex('users').where('id', req.params.id).then((thisUser) => {
-
+  knex('users').where('id', req.params.id).first().then((thisUser) => {
+    console.log(thisUser)
+    res.render('users/delete', {thisUser})
   })
-  res.render('users/delete')
 })
 
-//render user
+// Render user
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
   knex('users').where('id', id).then((thisUser) => {
@@ -19,7 +19,7 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
-//register user
+// Register user
 router.post('/', (req, res, next) => {
   bcrypt.hash(req.body.password, 12)
   .then((hashed_pw) => {
@@ -42,7 +42,7 @@ router.post('/', (req, res, next) => {
   })
 })
 
-//delete user
+// delete user
 router.delete('/delete/:id', (req, res, next) => {
   var id = req.params.id
   var password = req.body.password
@@ -53,8 +53,9 @@ router.delete('/delete/:id', (req, res, next) => {
     user = row
     console.log(user)
     bcrypt.compare(password, user.hashed_pw)
-    knex('users').where('user', user).del().then(() => {
-      res.resdirect('/')
+    knex('users').where('id', id).del().then(() => {
+      req.session = null
+      res.redirect('/')
     })
   }).catch(bcrypt.MISMATCH_ERROR, () => {
     throw { status: 400, message: 'Bad username or password' }
@@ -64,7 +65,7 @@ router.delete('/delete/:id', (req, res, next) => {
   })
 })
 
-//user login
+// user login
 router.post('/session', (req, res, next) => {
   var { username, password } = req.body
   var user

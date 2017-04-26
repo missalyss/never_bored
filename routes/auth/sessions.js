@@ -12,9 +12,18 @@ var authorize = function (req, res, next) {
   next()
 }
 
+// Log out
 router.delete('/', (req, res, next) => {
   req.session = null
   res.redirect('/')
+})
+
+router.get('/my-posted-activities', authorize, (req, res, next) => {
+  var userId = req.session.userId
+  knex('activities').where(userId, 'creator_id').then((postedActivities) => {
+
+    res.render('myActivities', {postedActivities})
+  })
 })
 
 router.get('/', authorize, (req, res, next) => {
@@ -23,5 +32,6 @@ router.get('/', authorize, (req, res, next) => {
 
   res.render('partials/authNav', {userId})
 })
+
 
 module.exports = router
