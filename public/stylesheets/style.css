@@ -4,8 +4,8 @@ body {
   /*background-color: #0d174a;*/
 }
 
-a {
-  color: #00B7FF;
+.thumb-title {
+  font-size: 2rem;
 }
 
 /*.card {
@@ -37,11 +37,11 @@ a {
 }*/
 
 .img_url {
-  height: 200px;
+  max-height: 180px;
 }
 
-.label {
-  font-size: 1.3em;
+.sidebar-col {
+  padding: 0px;
 }
 
 .background-shade{
@@ -94,17 +94,10 @@ a {
 padding-right: 0px
 }
 
-/*.panel-heading {
-  height: 50px;
-}*/
-/* TEST LAYOUT */
-/*body,html,.row-offcanvas {
-  height:100%;
-}*/
-
-/*body {
-  padding-top: 50px;
-}*/
+.li-attr {
+  padding: 0px;
+  list-style: none;
+}
 
 #sidebar {
   width: inherit;

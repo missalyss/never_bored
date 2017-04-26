@@ -18,14 +18,4 @@ router.get('/', (req, res, next) => {
   })
 })
 
-// router.get('/data', (req, res, next) => {
-//   knex('activities')
-//   .innerJoin('tags_join', 'activities.id', 'tags_join.activity_id')
-//   .innerJoin('category', 'categories.id', 'tags_join.category_id')
-//   .then((activityData) => {
-//     console.log(activityData)
-//     res.json(activityData)
-//   })
-// })
-
 module.exports = router
