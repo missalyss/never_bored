@@ -2,12 +2,10 @@ var express = require('express')
 var router = express.Router()
 var knex = require('../db/connection')
 
-
-//get to the new form
-router.get('/new', (req, res, next) =>{
+// get to the new form
+router.get('/new', (req, res, next) => {
   res.render('activities/new')
 })
-
 
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
@@ -17,26 +15,23 @@ router.get('/:id', (req, res, next) => {
   .innerJoin('categories', 'tags_join.category_id', 'categories.id')
   .where('activities.id', id)
   .then(thisActivity => {
-    console.log(thisActivity);
+    console.log(thisActivity)
     var activityIndividual = thisActivity[0]
     // look at pass inner join lessons and add
     res.render('activities/show', {thisActivity, activityIndividual})
   })
 })
 
-
-
-//get to the edits page
-router.get('/:id/edits', (req, res, next) =>{
+// get to the edits page
+router.get('/:id/edits', (req, res, next) => {
   const id = req.params.id
-  knex('activities').select('*').where({id}).first().then((activity)=>{
+  knex('activities').select('*').where({id}).first().then((activity) => {
     res.render('activities/edits', {activity})
   })
 })
 
-
-//post new activities into form
-router.post('/', (req, res, next)=>{
+// Post activity
+router.post('/', (req, res, next) => {
   var createActivity = {
     title: req.body.title,
     description: req.body.description,
@@ -54,23 +49,17 @@ router.post('/', (req, res, next)=>{
     category_id: parseInt(req.body['select_categories'])
   }
 
-
-knex('activities').insert(createActivity, '*').then(newActivity =>{
-  var id = newActivity[0].id
-  addCategory.activity_id = id
-  knex('tags_join').insert(addCategory, '*').then(()=>{
-
-    res.redirect(`activities/${id}`)
+  knex('activities').insert(createActivity, '*').then(newActivity => {
+    var id = newActivity[0].id
+    addCategory.activity_id = id
+    knex('tags_join').insert(addCategory, '*').then(() => {
+      res.redirect(`activities/${id}`)
     })
   })
 })
 
-//put method --editing the activity form
-
-// GET HELP HERE *********************************
-
-router.put('/:id', (req, res, next) =>{
-  console.log('===========================');
+// Put activity
+router.put('/:id', (req, res, next) => {
   const id = req.params.id
 
   var editActivity = {
@@ -93,25 +82,20 @@ router.put('/:id', (req, res, next) =>{
   knex('activities')
   .update(editActivity, '*')
   .where('id', id)
-  .then((edits) =>{
-    // var id = editActivity[0].id
-    // editCategories.activity_id  = id
-
+  .then((edits) => {
     knex('tags_join')
-    .where('activity_id', id) // we need this to select the particular activity id
+    .where('activity_id', id)
     .update(editCategories, '*')
-    .then(()=>{
-
+    .then(() => {
       res.redirect(`/activities/${id}`)
     })
   })
 })
 
-
-router.delete('/:id', function (req, res, next){
+// Delete activity
+router.delete('/:id', function (req, res, next) {
   var id = req.params.id
-
-  knex('activities').del().where({id}).then(()=>{
+  knex('activities').del().where({id}).then(() => {
     res.redirect('/')
   })
 })

@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/login', (req, res, next) => {
-  res.render('login')
+  res.render('users/login')
 })
 
 router.get('/signup', (req, res, next) => {
