@@ -9,7 +9,7 @@ exports.up = function (knex) {
     table.string('time').notNullable()
     table.string('location').notNullable()
     table.string('party').notNullable()
-    table.boolean('adult').notNullable()
+    table.string('adult').notNullable()
     table.text('img_url').notNullable()
     table.integer('creator_id').notNullable()
     table.timestamps(true, true)

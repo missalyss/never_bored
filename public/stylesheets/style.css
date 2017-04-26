@@ -1,14 +1,14 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #0d174a;
+  /*background-color: #0d174a;*/
 }
 
 a {
   color: #00B7FF;
 }
 
-.card {
+/*.card {
     background:#FFF;
     display: block;
     display: -webkit-box;
@@ -24,9 +24,9 @@ a {
     font-family: 'Roboto', sans-serif;
     -webkit-transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+}*/
 
-.card-heading {
+/*.card-heading {
   color: #0d174a;
   text-decoration: none;
 }
@@ -34,10 +34,10 @@ a {
 .card-body{
  margin: 1em;
  text-align: center;
-}
+}*/
 
 .img_url {
-  height: 280px;
+  height: 200px;
 }
 
 .label {
@@ -88,4 +88,36 @@ a {
     top: -12px;
     right: 14px;
     z-index: 9;
+}
+
+.col-md-6 {
+padding-right: 0px
+}
+
+/*.panel-heading {
+  height: 50px;
+}*/
+/* TEST LAYOUT */
+/*body,html,.row-offcanvas {
+  height:100%;
+}*/
+
+/*body {
+  padding-top: 50px;
+}*/
+
+#sidebar {
+  width: inherit;
+  min-width: 220px;
+  max-width: 220px;
+  background-color:#f5f5f5;
+  float: left;
+  height:100%;
+  position:relative;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+#main {
+  height:100%;
+  overflow:auto;
 }
