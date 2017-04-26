@@ -8,13 +8,22 @@ router.get('/new', (req, res, next) =>{
   res.render('activities/new')
 })
 
-//get single id
+
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
-  knex('activities').where('id', id).then((thisActivity) => {
+  return knex.select('activities.title', 'activities.id', 'activities.cost', 'activities.energy', 'activities.time', 'activities.location', 'activities.party', 'activities.adult', 'activities.creator_id', 'activities.img_url', 'categories.name')
+  .from('activities')
+  .innerJoin('tags_join', 'tags_join.activity_id', 'activities.id')
+  .innerJoin('categories', 'tags_join.category_id', 'categories.id')
+  .where('activities.id', id)
+  .then(thisActivity => {
+    console.log(thisActivity);
+
+    // look at pass inner join lessons and add
     res.render('activities/show', {thisActivity})
   })
 })
+
 
 
 //get to the edits page
@@ -58,7 +67,10 @@ knex('activities').insert(createActivity, '*').then(newActivity =>{
 
 //put method --editing the activity form
 
+// GET HELP HERE *********************************
+
 router.put('/:id', (req, res, next) =>{
+  console.log('===========================');
   const id = req.params.id
 
   var editActivity = {
@@ -74,12 +86,24 @@ router.put('/:id', (req, res, next) =>{
     creator_id: req.body['creator_id']
   }
 
+  var editCategories = {
+    category_id: parseInt(req.body['select_categories'])
+  }
+
   knex('activities')
   .update(editActivity, '*')
   .where('id', id)
   .then((edits) =>{
+    // var id = editActivity[0].id
+    // editCategories.activity_id  = id
 
-    res.redirect(`/activities/${id}`)
+    knex('tags_join')
+    .where('activity_id', id) // we need this to select the particular activity id 
+    .update(editCategories, '*')
+    .then(()=>{
+
+      res.redirect(`/activities/${id}`)
+    })
   })
 })
 
