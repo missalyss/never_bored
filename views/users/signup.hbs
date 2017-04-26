@@ -30,15 +30,35 @@
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
 									</div>
 
-                  <form class="form-group avatar_url">
-                    <center><h5>Choose Avatar Color</h5></center>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Solid_pink.svg/1024px-Solid_pink.svg.png" style="width:250px;height:150px;">
-                    <img src="https://img.clipartfest.com/f58d0131d6ea684d22ea69813033e52f_solid-colors-solid-color-square-clipart-free_236-236.jpeg" style="width:250px;height:150px;">
-                    <img src="https://www.familybedding.com/img/p/l/1/e/5/d/131648/Candy_Green_Solid_Color_16_Square_Throw_Pillow.jpg"style="width:250px;height:150px;">
-                    <img src="http://cdn.playbuzz.com/cdn/402d3240-a1df-4b70-ab11-0204c82b2b06/4500b257-1e5b-4a76-88af-0cae0d20057c.jpg" style="width:250px;height:150px;">
+                    <div id="avatar_url">
+                      <form>
+                        <label class="avatars">
+                        <input type="radio" name="avatar_url"/>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Solid_pink.svg/1024px-Solid_pink.svg.png" alt="" style="width:250px;height:150px;"/>
+                        </label>
+
+                        <label class="avatars">
+                        <input type="radio" name="avatar_url"/>
+                        <img src="https://img.clipartfest.com/f58d0131d6ea684d22ea69813033e52f_solid-colors-solid-color-square-clipart-free_236-236.jpeg" alt="" style="width:250px;height:150px;"/>
+                        </label>
+
+                        <label class="avatars">
+                        <input type="radio" name="avatar_url"/>
+                        <img src="https://www.familybedding.com/img/p/l/1/e/5/d/131648/Candy_Green_Solid_Color_16_Square_Throw_Pillow.jpg" alt="" style="width:250px;height:150px;"/>
+                        </label>
+
+                        <label class="avatars">
+                        <input type="radio" name="avatar_url"/>
+                        <img src="http://cdn.playbuzz.com/cdn/402d3240-a1df-4b70-ab11-0204c82b2b06/4500b257-1e5b-4a76-88af-0cae0d20057c.jpg" alt="" style="width:250px;height:150px;"/>
+                        </label>
+
+                      </form>
+                    </div>
 
 
-                  </form>
+                <br>
+
+
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
@@ -54,3 +74,7 @@
 			</div>
 		</div>
 	</div>
+
+  <script src="/js/jquery-3.2.0.min.js" charset="utf-8"></script>
+  <script src="/js/requests.js" charset="utf-8"></script>
+  <script type="text/javascript">
