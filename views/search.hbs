@@ -55,6 +55,55 @@
       <input type="checkbox" name="energy" value="⚡️⚡️⚡️" id="⚡️⚡️⚡️" /> ⚡️⚡️⚡️</label>
         </form>
     </div>
+    <!-- time -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰" id="⏰" /> ⏰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰⏰" id="⏰⏰" /> ⏰⏰</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="time" value="⏰⏰⏰" id="⏰⏰⏰" /> ⏰⏰⏰</label>
+        </form>
+    </div>
+    <!-- Location -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="location" value="🌳" id="🌳" /> 🌳</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="location" value="🏠" id="🏠" /> 🏠</label>
+        </form>
+    </div>
+    <!-- Party -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="👯" id="👯" /> 👯</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="👨‍👩‍" id="👨‍👩‍" /> 👨‍👩‍</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="💑" id="💑" /> 💑</label>
+      <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="🙋'" id="🙋" /> 🙋'</label>
+        </form>
+    </div>
+    <!-- Adult -->
+    <div>
+        <form>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="adult" value="true" id="adultTrue" />Yes</label>
+            <br>
+            <label style="font-size:12px;">
+      <input type="checkbox" name="party" value="false" id="adultFalse" /> No‍</label>
+        </form>
+    </div>
 </div>
 
 <!--  -->
@@ -64,7 +113,7 @@
     {{#each allActivities}}
     <div class="col-md-4 activity"
       data-id="{{ title }}"
-      data-category="{{ name }} {{ cost }} {{energy}}">
+      data-category="{{ name }} {{ cost }} {{energy}} {{time}} {{location}} {{party}} {{adult}}">
       <div class="card">
         <div class="card-content">
           <a href="./activities/{{id}}">
