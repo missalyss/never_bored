@@ -82,7 +82,6 @@ router.post('/session', (req, res, next) => {
     delete user.hashed_pw
     req.session.userId = user.id
     req.session.username = user.username
-    console.log(user, req.session)
     res.redirect(`/`)
   })
   .catch(bcrypt.MISMATCH_ERROR, () => {
