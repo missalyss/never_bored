@@ -191,7 +191,7 @@ exports.seed = function (knex) {
           description: 'The path around Greenlake is busy all year long. Grab skates or just use your feet and take a walk around. I\'ts about 3 miles around and its a lovely view the whole way around',
           cost: '💰',
           energy: '⚡️⚡️⚡️',
-          time: '⏳',
+          time: '⏳⏳',
           location: '🌳',
           party: '🙋',
           adult: '🥛',
