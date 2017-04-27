@@ -19,12 +19,13 @@ router.delete('/', (req, res, next) => {
 })
 
 // Render only activities user has posted
-router.get('/my-posted-activities/:id', authorize, (req, res, next) => {
+router.get('/my-posted-activities/', authorize, (req, res, next) => {
   var userId = req.session.userId
-  knex('activities').where('creator_id', userId)
+  knex.select('activities.id', 'activities.title', 'activities.description', 'activities.img_url', 'activities.party', 'activities.location', 'activities.cost', 'activities.energy', 'activities.time', 'activities.adult', 'categories.name').where('activities.creator_id', userId)
   .from('activities')
   .innerJoin('tags_join', 'tags_join.activity_id', 'activities.id')
   .innerJoin('categories', 'tags_join.category_id', 'categories.id')
+  .orderBy('activities.id', 'asc')
   .then((postedActivities) => {
     res.render('users/myActivities', {postedActivities})
   })

@@ -35,12 +35,12 @@
             </div>
             <hr />
             <div class="row">
-              <div class="col-md-6 text-right">
+              <div class="col-md-6 col-sm-6 text-center">
                 <a href="/activities/{{id}}/edits"><button class="btn btn-md btn-danger">Edit</button></a>
               </div>
-              <div class="col-md-6 text-left">
+              <div class="col-md-6 col-sm-6 text-center">
                 <form action="/activities/{{id}}?_method=DELETE" method="POST">
-                  <input class="btn btn-md btn-danger" type="submit" name="delete" value="Delete">
+                  <input class="deleteAct btn btn-md btn-danger" type="submit" name="delete" value="Delete">
                 </form>
               </div>
             </div>

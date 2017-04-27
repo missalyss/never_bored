@@ -106,7 +106,8 @@ router.put('/:id', authorize, (req, res, next) => {
 // Delete activity
 router.delete('/:id', authorize, (req, res, next) => {
   var id = req.params.id
-  knex('activities').del().where({id}).then(() => {
+  knex('activities').del().where({id})
+  .then(() => {
     res.redirect('/')
   })
 })
