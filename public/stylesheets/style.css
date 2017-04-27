@@ -1,7 +1,29 @@
 body {
-  padding: 20px;
+  /*padding: 20px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /*background-color: #0d174a;*/
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.brand {
+    font-size: 2.5rem;
+    font-style: italic;
+    position: absolute;
+    left: 50%;
+    margin-left: -80px !important;  /* 50% of your logo width */
+    display: block;
+}
+
+.guide-bar {
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.guide-bar a {
+margin-top: 50px;
 }
 
 .thumb-title {
