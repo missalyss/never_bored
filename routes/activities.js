@@ -2,11 +2,22 @@ var express = require('express')
 var router = express.Router()
 var knex = require('../db/connection')
 
-// get to the new form
-router.get('/new', (req, res, next) => {
+var authorize = function (req, res, next) {
+  if (!req.session.userId) {
+    return next({
+      status: 401,
+      message: 'I\'m sorry, but you need to be signed in to view this page! Please log in or create an account.'
+    })
+  }
+  next()
+}
+
+// Render New activity
+router.get('/new', authorize, (req, res, next) => {
   res.render('activities/new')
 })
 
+// Show activity
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
   return knex.select('activities.title', 'activities.id', 'activities.description', 'activities.cost', 'activities.energy', 'activities.time', 'activities.location', 'activities.party', 'activities.adult', 'activities.creator_id', 'activities.img_url', 'categories.name')
@@ -22,7 +33,7 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
-// get to the edits page
+// Render edit activity
 router.get('/:id/edits', (req, res, next) => {
   const id = req.params.id
   knex('activities').select('*').where({id}).first().then((activity) => {
@@ -31,7 +42,7 @@ router.get('/:id/edits', (req, res, next) => {
 })
 
 // Post activity
-router.post('/', (req, res, next) => {
+router.post('/', authorize, (req, res, next) => {
   var createActivity = {
     title: req.body.title,
     description: req.body.description,
@@ -59,7 +70,7 @@ router.post('/', (req, res, next) => {
 })
 
 // Put activity
-router.put('/:id', (req, res, next) => {
+router.put('/:id', authorize, (req, res, next) => {
   const id = req.params.id
 
   var editActivity = {
@@ -72,7 +83,7 @@ router.put('/:id', (req, res, next) => {
     party: req.body.party,
     adult: req.body.adult,
     img_url: req.body['img_url'],
-    creator_id: req.body['creator_id']
+    creator_id: req.session.userId
   }
 
   var editCategories = {
@@ -87,13 +98,13 @@ router.put('/:id', (req, res, next) => {
     .where('activity_id', id)
     .update(editCategories, '*')
     .then(() => {
-      res.redirect(`/activities/${id}`)
+      res.redirect(`/sessions/my-posted-activities/${id}`)
     })
   })
 })
 
 // Delete activity
-router.delete('/:id', function (req, res, next) {
+router.delete('/:id', authorize, (req, res, next) => {
   var id = req.params.id
   knex('activities').del().where({id}).then(() => {
     res.redirect('/')

@@ -36,6 +36,7 @@ router.post('/', (req, res, next) => {
     var user = users[0]
     delete user.hashed_pw
     req.session.userId = user.id
+    req.session.username = user.username
     res.redirect(`/`)
   }).catch((err) => {
     next(err)
@@ -58,7 +59,7 @@ router.delete('/delete/:id', (req, res, next) => {
       res.redirect('/')
     })
   }).catch(bcrypt.MISMATCH_ERROR, () => {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
   })
   .catch((err) => {
     next(err)
@@ -72,7 +73,7 @@ router.post('/session', (req, res, next) => {
   knex('users').where('username', username).first()
   .then((row) => {
     if (!row) {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
     }
     user = row
     return bcrypt.compare(password, user.hashed_pw)
@@ -80,11 +81,11 @@ router.post('/session', (req, res, next) => {
   .then(() => {
     delete user.hashed_pw
     req.session.userId = user.id
-    console.log(user, req.session)
+    req.session.username = user.username
     res.redirect(`/`)
   })
   .catch(bcrypt.MISMATCH_ERROR, () => {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
   })
   .catch((err) => {
     next(err)

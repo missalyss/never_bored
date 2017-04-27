@@ -18,20 +18,28 @@ router.delete('/', (req, res, next) => {
   res.redirect('/')
 })
 
-router.get('/my-posted-activities', authorize, (req, res, next) => {
+// Render only activities user has posted
+router.get('/my-posted-activities/:id', authorize, (req, res, next) => {
   var userId = req.session.userId
-  knex('activities').where(userId, 'creator_id').then((postedActivities) => {
-
-    res.render('myActivities', {postedActivities})
+  knex('activities').where('creator_id', userId)
+  .from('activities')
+  .innerJoin('tags_join', 'tags_join.activity_id', 'activities.id')
+  .innerJoin('categories', 'tags_join.category_id', 'categories.id')
+  .then((postedActivities) => {
+    res.render('users/myActivities', {postedActivities})
+  })
+  .catch(err => {
+    next(err)
   })
 })
 
 router.get('/', authorize, (req, res, next) => {
   var userId = req.session.userId
-  console.log(userId, req.session.userId)
+  console.log(req.session)
 
-  res.render('partials/authNav', {userId})
+  knex('users').where('id', userId).then((thisUser) => {
+    res.render('partials/authNav', {thisUser})
+  })
 })
-
 
 module.exports = router

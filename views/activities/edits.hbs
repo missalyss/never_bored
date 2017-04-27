@@ -1,13 +1,21 @@
+{{#each activity}}
+{{/each}}
+<form method="POST" action="/activities/{{id}}?_method=PUT" class="well">
+  <div class="row">
 
-<form method="POST" action="/activities/{{activity.id}}?_method=PUT" class="well">
-  <div class="form-group">
-    <label for="title">Title</label> <input id="title" name="title"type="text" class="form-control" value="{{activity.title}}">
+  <div class="form-group col-sm-6">
+    <label for="title">Title</label> <input id="title" name="title" type="text" class="form-control" value="{{title}}">
   </div>
-  <div class="form-group">
-    <label for="description">Description</label> <input id="description" name="description" type="text" class="form-control" value="{{activity.description}}">
+  <div class="form-group col-sm-6">
+    <label for="description">Description</label> <input id="description" name="description" type="text" class="form-control" value="{{description}}">
   </div>
+</div>
 
-<!-- Emoji's -->
+<hr>
+
+<div class="row">
+
+<div class="col-sm-3">
 <p><strong>Cost</strong></p>
 <label class="form-check-label" for="cost1">
 <input class="form-check-input" id="cost1" type="radio" name="cost" value="💰">💰</label></br>
@@ -17,8 +25,10 @@
 
 <label class="form-check-label" for="cost3">
 <input class="form-check-input" id="cost3" type="radio" name="cost" value="💰💰💰">💰💰💰</label></br>
+</div>
 
-<p><strong>Energy</strong></p>
+<div class="col-sm-3">
+<p><strong>Energy Level</strong></p>
 <label class="form-check-label" for="energy1">
 <input class="form-check-input" id="energy1" type="radio" name="energy" value="⚡️">⚡️</label></br>
 
@@ -27,63 +37,76 @@
 
 <label class="form-check-label" for="energy3">
 <input class="form-check-input" id="energy3" type="radio" name="energy" value="⚡️⚡️⚡️">⚡️⚡️⚡️</label></br>
+</div>
 
-<p><strong>Time</strong></p>
+<div class="col-sm-3">
+<p><strong>Time Commitment</strong></p>
 <label class="form-check-label" for="time1">
 <input class="form-check-input" id="time1" type="radio" name="time" value="⏰">⏰</label></br>
 
 <label class="form-check-label" for="time2">
-<input class="form-check-input" id="time2" type="radio" name="time" value="⏰⏰">⏰⏰</label></br>
+<input class="form-check-input" id="time2" type="radio" name="time" value="⏰ ⏰">⏰ ⏰</label></br>
 
 <label class="form-check-label" for="time3">
-<input class="form-check-input" id="time3" type="radio" name="time" value="⏰⏰⏰">⏰⏰⏰</label></br>
+<input class="form-check-input" id="time3" type="radio" name="time" value="⏰ ⏰ ⏰">⏰ ⏰ ⏰</label></br>
+</div>
 
-<p><strong>Location</strong></p>
-<label class="form-check-label" for="location1">
-<input class="form-check-input" id="location1" type="radio" name="location" value="🌳">🌳</label></br>
+<div class="col-sm-2">
+<p><strong>Inside or Outside?</strong></p>
 
 <label class="form-check-label" for="location2">
 <input class="form-check-input" id="location2" type="radio" name="location" value="🏡">🏡</label></br>
+<label class="form-check-label" for="location1">
+  <input class="form-check-input" id="location1" type="radio" name="location" value="🌳">🌳</label></br>
+</div>
+</div>
 
+<div class="row">
 
-<p><strong>party</strong></p>
+<div class="col-sm-4">
+<p><strong>Who is it best with?</strong></p>
 <label class="form-check-label" for="adult">
-<input class="form-check-input" id="party" type="radio" name="party" value="💑">💑</label></br>
+<input class="form-check-input" id="party" type="radio" name="party" value="💑">💑  Date</label></br>
 
 <label class="form-check-label" for="friends">
-<input class="form-check-input" id="party" type="radio" name="party" value="👯">👯</label></br>
+<input class="form-check-input" id="party" type="radio" name="party" value="👯">👯  Friends</label></br>
 
 <label class="form-check-label" for="family">
-<input class="form-check-input" id="party" type="radio" name="party" value="👨‍👩‍👦‍👦">👨‍👩‍👦‍👦</label></br>
+<input class="form-check-input" id="party" type="radio" name="party" value="👨‍👩‍👦‍👦">👨‍👩‍👦‍👦  Family</label></br>
 
 <label class="form-check-label" for="solo">
-<input class="form-check-input" id="party" type="radio" name="party" value="🙋">🙋</label></br>
+<input class="form-check-input" id="party" type="radio" name="party" value="🙋">🙋 Solo</label></br>
+</div>
 
-<p><strong>adult</strong></p>
+<div class="col-sm-2">
+<p><strong>Does it contain adult content?</strong></p>
 <label class="form-check-label" for="adult">
-<input class="form-check-input" id="adult" type="radio" name="adult" value="true">true</label></br>
+<input class="form-check-input" id="adult" type="radio" name="adult" value="true">Yes</label></br>
 
 <label class="form-check-label" for="friends">
-<input class="form-check-input" id="adult" type="radio" name="adult" value="false">false</label></br>
+<input class="form-check-input" id="adult" type="radio" name="adult" value="false">No</label></br>
+</div>
 
-<select name="select_categories">
-  <option value="1">active</option>
-  <option value="2">creative</option>
-  <option value="3">entertainment</option>
-  <option value="4">food</option>
-  <option value="5">relaxing</option>
-  <option value="6">romantic</option>
-  <option value="7">social</option>
+<div class="col-sm-4">
+
+<label class="form-check-label"for="select_categories">What category does it belong to?</label>
+<select id="select_categories" name="select_categories">
+  <option value="1">Active</option>
+  <option value="2">Creative</option>
+  <option value="3">Entertainment</option>
+  <option value="4">Food</option>
+  <option value="5">Relaxing</option>
+  <option value="6">Romantic</option>
+  <option value="7">Social</option>
 </select>
+</div>
+</div>
+<hr>
 
-
+<div class="row">
 <!-- avatar pictures -->
   <div class="form-group">
-    <label for="img_url">Img_url</label> <input id="img_url" name="img_url" type="string" class="form-control" value="{{activity.img_url}}">
-  </div>
-
-  <div class="form-group">
-    <label for="creator_id">Creator_id</label> <input id="creator_id" name="creator_id" type="string" class="form-control" value="{{activity.creator_id}}">
+    <label for="img_url">Image URL</label> <input id="img_url" name="img_url" type="string" class="form-control" value="{{activity.img_url}}">
   </div>
 
   <div class="form-group">
@@ -91,7 +114,7 @@
   </div>
 
 </form>
-
+</div>
 <script src="/js/jquery-3.2.0.min.js" charset="utf-8"></script>
 <script src="/js/requests.js" charset="utf-8"></script>
 <script type="text/javascript">
