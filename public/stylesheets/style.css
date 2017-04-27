@@ -107,14 +107,6 @@ padding-right: 0px
   margin-top: 10px;
 }
 
-/*.guide-div-1 {
-  background-image: url(http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000051-forest-green.jpg);
-}*/
-
-.guide-div-2 {
-  display: none;
-}
-
 #sidebar {
   width: inherit;
   min-width: 220px;
@@ -126,17 +118,31 @@ padding-right: 0px
   overflow-y:auto;
   overflow-x:hidden;
 }
+
 #main {
   height:100%;
   overflow:auto;
 }
 
-#gb-in img {
-width: 100%;
+.guide-buttons {
+  margin: 10px 0px;
+  display:none;
 }
 
-#gb-out img {
-width: 100%;
+#guide-div-2 {
+  display: none;
+}
+
+#guide-div-3 {
+  display: none;
+}
+
+#guide-div-4 {
+  display: none;
+}
+
+#guide-div-5 {
+  display: none;
 }
 
 .img-label > input{ /* HIDE RADIO */
@@ -144,11 +150,12 @@ width: 100%;
   position: absolute; /* Remove input from document flow */
 }
 .img-label > input + img{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
 }
 .img-label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:4px solid #2780E3;
+  border: 3px solid #2780E3;
 }
 
 .img-header {

@@ -6,49 +6,158 @@
 <!--  -->
 
 <!-- Guide Step 1 -->
-<div class="col-md-12 panel panel-default text-center guide-div-1">
+<div id="guide-div-1" class="col-md-12 panel panel-default text-center">
 
     <h1>I want to do something...</h1>
     <form id="g-form1" action="/guide/data" method="get">
-    <div id="gb-out" class="col-sm-6">
+      <div class="col-sm-6">
+        <h3 class="img-header"><span>Indoors</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="location" value="🏠">
+          <img src="./images/guide-inside.jpg" alt="">
+        </label>
+      </div>
+    <div class="col-sm-6">
       <h3 class="img-header text-center"><span>Outdoors</span></h3>
       <label class="img-label">
         <input class="form-group" type="radio" name="location" value="🌳">
       <img src="./images/guide-outdoor.jpg" alt="">
       </label>
     </div>
-    <div id="gb-in" class="col-sm-6">
-      <h3 class="img-header"><span>Indoors</span></h3>
-      <label class="img-label">
-        <input class="form-group" type="radio" name="location" value="🏠">
-      <img src="./images/guide-inside.jpg" alt="">
-      </label>
-    </div>
-    <div class="col-md-12">
+    <div class="col-md-12 guide-buttons">
       <a id="g-next1" class="btn btn-primary">Next</a>
     </div>
 
 </div>
 
-
 <!-- Guide Step 2 -->
-<div class="col-md-6 col-md-offset-3 panel panel-default guide-div-2">
-  <div class="panel-body text-center">
-    <h1>Cost level...</h1>
-    <div class="col-md-6">
-      <p>💰</p>
-      <input type="radio" name="cost" value="💰">
+<div id="guide-div-2" class="col-md-12 panel panel-default text-center">
+
+    <h1>With...</h1>
+      <div class="col-sm-6">
+        <h3 class="img-header"><span>Myself</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="party" value="🙋">
+          <img src="./images/guide-myself.png" alt="">
+        </label>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="img-header text-center"><span>Date</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="party" value="💑">
+          <img src="./images/guide-date.png" alt="">
+        </label>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="img-header text-center"><span>Family</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="party" value="👨‍👩‍👧‍👦">
+        <img src="./images/guide-family.jpg" alt="">
+        </label>
+      </div>
+      <div class="col-sm-6">
+        <h3 class="img-header text-center"><span>Friends</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="party" value="👯">
+        <img src="./images/guide-friends2.png" alt="">
+        </label>
+      </div>
+      <div class="col-md-12 guide-buttons">
+      <a id="g-next2" class="btn btn-primary">Next</a>
     </div>
-    <div class="col-md-6">
-      <p>💰💰</p>
-      <input type="radio" name="cost" value="💰💰">
+
+</div>
+
+<!-- Guide Step 3 -->
+<div id="guide-div-3" class="col-md-12 panel panel-default text-center">
+
+    <h1>With a cost relatively...</h1>
+      <div class="col-sm-4">
+        <h3 class="img-header"><span>Cheap</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="cost" value="💰">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>Moderate</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="cost" value="💰💰">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>Expensive</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="cost" value="‍💰💰💰">
+        <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-md-12 guide-buttons">
+      <a id="g-next3" class="btn btn-primary">Next</a>
     </div>
-    <div class="col-md-6">
-      <p>💰💰💰</p>
-      <input type="radio" name="cost" value="💰💰💰">
+
+</div>
+
+<!-- Guide Step 4 -->
+<div id="guide-div-4" class="col-md-12 panel panel-default text-center">
+
+    <h1>The activity should be...</h1>
+      <div class="col-sm-4">
+        <h3 class="img-header"><span>Low Energy</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="⚡️">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>Moderate Energy</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="⚡️⚡️">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>High Energy</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="‍⚡️⚡️⚡️">
+        <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-md-12 guide-buttons">
+      <a id="g-next4" class="btn btn-primary">Next</a>
     </div>
-    <input class="form-group" id="" type="submit" name="submit" value="Next"></input>
-    </form>
-    </form>
-  </div>
+
+</div>
+
+<!-- Guide Step 5 -->
+<div id="guide-div-5" class="col-md-12 panel panel-default text-center">
+
+    <h1>And I want to spend about...</h1>
+      <div class="col-sm-4">
+        <h3 class="img-header"><span>0–1 Hours</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="⚡️">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>1–3 Hours</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="⚡️⚡️">
+          <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-sm-4">
+        <h3 class="img-header text-center"><span>3+ Hours</span></h3>
+        <label class="img-label">
+          <input class="form-group" type="radio" name="energy" value="‍⚡️⚡️⚡️">
+        <img src="http://placehold.it/600x400" alt="">
+        </label>
+      </div>
+      <div class="col-md-12 guide-buttons">
+        <input class="form-group btn btn-primary" type="submit" name="submit" value="Find Me an Activity!"></input>
+        </form>
+    </div>
+
 </div>
