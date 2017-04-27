@@ -34,6 +34,7 @@ hbs.registerPartials(__dirname + '/views/partials')
 
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.enable('trust proxy')
 app.use(logger('dev'))
 app.use(methodOverride('_method'))
 app.use(bodyParser.json())
