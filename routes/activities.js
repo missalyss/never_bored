@@ -3,10 +3,11 @@ var router = express.Router()
 var knex = require('../db/connection')
 
 var authorize = function (req, res, next) {
+
   if (!req.session.userId) {
     return next({
       status: 401,
-      message: 'I\'m sorry, but you need to be signed in to view this page! Please log in or create an account.'
+      message: 'Oops! Sorry friend, but you need to be signed in to view this page. Please log in or create an account.'
     })
   }
   next()
@@ -34,9 +35,11 @@ router.get('/:id', (req, res, next) => {
 })
 
 // Render edit activity
-router.get('/:id/edits', (req, res, next) => {
+router.get('/:id/edits', authorize, (req, res, next) => {
   const id = req.params.id
+  console.log(id)
   knex('activities').select('*').where({id}).first().then((activity) => {
+    console.log(activity)
     res.render('activities/edits', {activity})
   })
 })
@@ -98,7 +101,7 @@ router.put('/:id', authorize, (req, res, next) => {
     .where('activity_id', id)
     .update(editCategories, '*')
     .then(() => {
-      res.redirect(`/sessions/my-posted-activities/${id}`)
+      res.redirect(`/sessions/my-posted-activities/`)
     })
   })
 })
