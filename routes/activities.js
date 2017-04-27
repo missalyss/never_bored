@@ -83,7 +83,7 @@ router.put('/:id', authorize, (req, res, next) => {
     party: req.body.party,
     adult: req.body.adult,
     img_url: req.body['img_url'],
-    creator_id: req.body['creator_id']
+    creator_id: req.session.userId
   }
 
   var editCategories = {
@@ -98,7 +98,7 @@ router.put('/:id', authorize, (req, res, next) => {
     .where('activity_id', id)
     .update(editCategories, '*')
     .then(() => {
-      res.redirect(`/activities/${id}`)
+      res.redirect(`/sessions/my-posted-activities/${id}`)
     })
   })
 })
