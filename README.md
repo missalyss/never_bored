@@ -26,7 +26,7 @@ In order to look at our app please visit us: <*insert page here*> or clone down 
 
 ## Our Project 
 
-< insert project heroku link here > 
+https://never-bored.herokuapp.com/
 
 
 Created By: 
