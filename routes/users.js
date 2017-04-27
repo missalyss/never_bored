@@ -36,6 +36,7 @@ router.post('/', (req, res, next) => {
     var user = users[0]
     delete user.hashed_pw
     req.session.userId = user.id
+    req.session.username = user.username
     res.redirect(`/`)
   }).catch((err) => {
     next(err)
@@ -80,6 +81,7 @@ router.post('/session', (req, res, next) => {
   .then(() => {
     delete user.hashed_pw
     req.session.userId = user.id
+    req.session.username = user.username
     console.log(user, req.session)
     res.redirect(`/`)
   })
