@@ -22,6 +22,7 @@ var categories = require('./routes/categories')
 var search = require('./routes/search')
 var favorites = require('./routes/favorites')
 var sessions = require('./routes/auth/sessions')
+var guide = require('./routes/guide')
 
 var app = express()
 
@@ -62,6 +63,7 @@ app.use('/categories', categories)
 app.use('/search', search)
 app.use('/favorites', favorites)
 app.use('/sessions', sessions)
+app.use('/guide', guide)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
