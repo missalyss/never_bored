@@ -34,9 +34,11 @@ router.get('/data', (req, res, next) => {
     //
     if (guideActivity.length > 1) {
       var randomActivity = guideActivity[Math.floor(Math.random() * arrayLength)]
-      console.log()
+      res.redirect(`/activities/${randomActivity.id}`)
+    } else {
+      // Make error message, or page
+      res.redirect('/')
     }
-    res.redirect(`/activities/${randomActivity.id}`)
   })
 })
 
