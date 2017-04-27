@@ -25,7 +25,7 @@ exports.seed = function (knex) {
           time: '⏳⏳⏳',
           location: '🌳',
           party: '👶',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://s-media-cache-ak0.pinimg.com/564x/1e/f4/64/1ef4647e3a8a1397834e9dc70440de13.jpg',
           creator_id: 1
         },
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
           time: '⏳⏳',
           location: '🌳',
           party: '❤️',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'http://i.dailymail.co.uk/i/pix/2014/02/15/article-2560034-1B832D0200000578-122_634x616.jpg',
           creator_id: 2
         },
@@ -51,7 +51,7 @@ exports.seed = function (knex) {
           time: '⏳',
           location: '🏠',
           party: '🙋',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e15/10665492_1480893262169813_1981530872_n.jpg',
           creator_id: 2
         },
@@ -77,7 +77,7 @@ exports.seed = function (knex) {
           time: '⏳',
           location: '🌳',
           party: '😎',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://s-media-cache-ak0.pinimg.com/originals/9f/be/e5/9fbee54170da7b16b0c4558ba15fff30.jpg',
           creator_id: 3
         },
@@ -90,7 +90,7 @@ exports.seed = function (knex) {
           time: '⏳⏳',
           location: '🌳',
           party: '😎',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18014042_1793653427617745_383950718844796928_n.jpg',
           creator_id: 3
         },
@@ -103,7 +103,7 @@ exports.seed = function (knex) {
           time: '⏳⏳⏳',
           location: '🌳',
           party: '❤️',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/17882784_1857598011171560_5300994038546038784_n.jpg',
           creator_id: 2
         },
@@ -116,7 +116,7 @@ exports.seed = function (knex) {
           time: '⏳⏳',
           location: '🏠',
           party: '👶',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18095050_634483400090832_6667349763924426752_n.jpg',
           creator_id: 2
         },
@@ -181,7 +181,7 @@ exports.seed = function (knex) {
           time: '⏳⏳⏳',
           location: '🌳',
           party: '👶',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'http://images.scribblelive.com/2013/8/18/9172bc03-a053-48f8-8490-a0fa0752cc50_400.jpg',
           creator_id: 3
         },
@@ -194,7 +194,7 @@ exports.seed = function (knex) {
           time: '⏳⏳',
           location: '🌳',
           party: '🙋',
-          adult: '🥛',
+          adult: '🍼',
           img_url: 'http://www.fiuts.org/events/calendar/Greenlake_3.jpg/@@images/image/preview',
           creator_id: 1
         }
