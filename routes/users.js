@@ -43,8 +43,8 @@ router.get('/:id', authorize, (req, res, next) => {
 // Register user
 router.post('/', (req, res, next) => {
   // Validation: Does Username Exists?
-  if (!req.body.username || !req.body.password || !req.body.email) {
-    return res.render('users/signup', {error: 'Fill in all fields'})
+  if (!req.body.username || !req.body.password || !req.body.email || !req.body.avatar_url) {
+    return res.render('users/signup', {error: 'Fill in all fields and make sure an avatar is selected'})
   }
 
   if (req.body.password !== req.body['confirm-password']) {
