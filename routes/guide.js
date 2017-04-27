@@ -18,4 +18,16 @@ router.get('/', (req, res, next) => {
   })
 })
 
+router.get('/data', (req, res, next) => {
+  console.log(req.query);
+  knex.select('activities.title', 'activities.id', 'activities.cost', 'activities.energy', 'activities.time', 'activities.location', 'activities.party', 'activities.adult', 'activities.creator_id', 'activities.img_url', 'categories.name')
+  .from('activities')
+  .innerJoin('tags_join', 'tags_join.activity_id', 'activities.id')
+  .innerJoin('categories', 'tags_join.category_id', 'categories.id')
+  .then(allActivities => {
+    //
+    res.render('guide', { allActivities })
+  })
+})
+
 module.exports = router

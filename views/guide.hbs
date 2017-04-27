@@ -1,3 +1,46 @@
-<script defer type="text/javascript" src="/js/guide.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+<script defer type="text/javascript" src="/js/guidejquery.js"></script>
 <!--  -->
-<!--  -->
+
+<!-- Guide Step 1 -->
+<div class="col-md-6 col-md-offset-3 panel panel-default guide-div-1">
+  <div class="panel-body text-center">
+    <h1>I want to do something...</h1>
+    <form id="g-form1" action="/guide/data" method="get">
+    <div class="col-md-6">
+      <p>Outdoors</p>
+      <input class="form-group" type="radio" name="location" value="b">
+    </div>
+    <div class="col-md-6">
+      <p>Indoors</p>
+      <input class="form-group" type="radio" name="location" value="a">
+    </div>
+    <button id="g-next1" type="button btn btn-default">Next</button>
+  </div>
+</div>
+
+
+<!-- Guide Step 2 -->
+<div class="col-md-6 col-md-offset-3 panel panel-default guide-div-2">
+  <div class="panel-body text-center">
+    <h1>Cost level...</h1>
+    <div class="col-md-6">
+      <p>💰</p>
+      <input type="radio" name="cost" value="1">
+    </div>
+    <div class="col-md-6">
+      <p>💰💰</p>
+      <input type="radio" name="cost" value="💰💰">
+    </div>
+    <div class="col-md-6">
+      <p>💰💰💰</p>
+      <input type="radio" name="cost" value="💰💰💰">
+    </div>
+    <input class="form-group" id="" type="submit" name="submit" value="Next"></input>
+    </form>
+    </form>
+  </div>
+</div>

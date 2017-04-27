@@ -79,6 +79,10 @@ padding-right: 0px
   margin-top: 10px;
 }
 
+.guide-div-2 {
+  display: none;
+}
+
 #sidebar {
   width: inherit;
   min-width: 220px;
