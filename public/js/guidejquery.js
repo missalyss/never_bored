@@ -1,3 +1,7 @@
+if (document.location.pathname === "/guide") {
+   $('.guide-bar').hide()
+}
+
 $('input').click(function() {
   $('.guide-buttons').show()
 })
