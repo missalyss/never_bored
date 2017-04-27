@@ -63,13 +63,13 @@
                 <form>
                   <h4>Time</h4>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="time" value="⏰" id="⏰" /> ⏰</label>
+              <input type="checkbox" name="time" value="⏰ 0-1 hrs" id="⏰ 0-1 hrs" /> ⏰ 0-1 hrs</label>
                     <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="time" value="⏰⏰" id="⏰⏰" /> ⏰ ⏰</label>
+              <input type="checkbox" name="time" value="⏰ ⏰ 1-3 hrs" id="⏰ ⏰ 1-3 hrs" /> ⏰ ⏰ 1-3 hrs</label>
                     <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="time" value="⏰⏰⏰" id="⏰⏰⏰" /> ⏰ ⏰ ⏰</label>
+              <input type="checkbox" name="time" value="⏰ ⏰ ⏰ 3+ hrs" id="⏰ ⏰ ⏰ 3+ hrs" /> ⏰ ⏰ ⏰ 3+ hrs</label>
                 </form>
             </div>
             <!-- Location -->
@@ -77,10 +77,10 @@
                 <form>
                   <h4>Location</h4>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="location" value="🌳" id="🌳" /> 🌳</label>
+              <input type="checkbox" name="location" value="🌳 Outside" id="🌳 Outside" /> 🌳 Outside</label>
                     <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="location" value="🏠" id="🏠" /> 🏠</label>
+              <input type="checkbox" name="location" value="🏠 Inside" id="🏠 Inside" /> 🏠 Inside</label>
                 </form>
             </div>
             <!-- Adult -->
@@ -88,10 +88,10 @@
               <form>
                 <h4>Adult</h4>
                 <label style="font-size:12px;">
-                  <input type="checkbox" name="adult" value="Yes" id="adultYes" /> Yes</label>
+                  <input type="checkbox" name="adult" value="🥂 Yes" id="adult🥂 Yes" /> 🥂 Yes</label>
                   <br>
                   <label style="font-size:12px;">
-                    <input type="checkbox" name="adult" value="No" id="adultNo" /> No‍</label>
+                    <input type="checkbox" name="adult" value="🥛 No" id="adult🥛 No" /> 🥛 No‍</label>
                   </form>
                 </div>
             <!-- Party -->
@@ -99,16 +99,16 @@
                 <form>
                   <h4>Party</h4>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="party" value="👯" id="👯" /> 👯 (Friends)</label>
+              <input type="checkbox" name="party" value="😎 Friends" id="😎 Friends" /> 😎 Friends</label>
                     <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="party" value="👨‍👩‍" id="👨‍👩‍" /> 👨‍👩‍ (Family)</label>
+              <input type="checkbox" name="party" value="👶 Family" id="👶 Family" /> 👶 Family</label>
                     <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="party" value="💑" id="💑" /> 💑 (Date)</label>
+              <input type="checkbox" name="party" value="❤️ Date" id="❤️ Date" /> ❤️ Date</label>
               <br>
                     <label style="font-size:12px;">
-              <input type="checkbox" name="party" value="🙋'" id="🙋" /> 🙋 (Solo)</label>
+              <input type="checkbox" name="party" value="🙋 Solo'" id="🙋 Solo" /> 🙋 Solo</label>
                 </form>
             </div>
       </div>
@@ -130,12 +130,12 @@
                   </div>
                   <div class="col-md-6 text-center">
                     <ul class="text-left">
-                    <li class="li-attr">Party: {{party}}</li>
-                    <li class="li-attr">Where: {{location}}</li>
-                    <li class="li-attr">Cost: {{cost}}</li>
-                    <li class="li-attr">Energy: {{energy}}</li>
-                    <li class="li-attr">Time: {{time}}</li>
-                    <li class="li-attr">Adult Oriented: {{adult}}</li>
+                    <li class="li-attr">{{party}}</li>
+                    <li class="li-attr">{{location}}</li>
+                    <li class="li-attr">{{cost}}</li>
+                    <li class="li-attr">{{energy}}</li>
+                    <li class="li-attr">{{time}}</li>
+                    <li class="li-attr">{{adult}}</li>
                   </ul>
                   <span class="label label-primary">{{name}}</span>
                   </div>
