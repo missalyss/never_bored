@@ -42,6 +42,35 @@ router.get('/:id', authorize, (req, res, next) => {
 
 // Register user
 router.post('/', (req, res, next) => {
+  // Validation: Does Username Exists?
+  if (!req.body.username || !req.body.password || !req.body.email) {
+    return res.render('users/signup', {error: 'Fill in all fields'})
+  }
+
+  if (req.body.password !== req.body['confirm-password']) {
+    return res.render('users/signup', {error: 'Password does not match'})
+  }
+
+  knex('users').then((allUsers) => {
+
+    for (element of allUsers) {
+
+      if (element.username === req.body.username) {
+        console.log('existing, Reject')
+        return res.render('users/signup', {
+          error: 'Username already exist.'
+        })
+      }
+
+      if (element.email === req.body.email) {
+        console.log('existing, Reject')
+        return res.render('users/signup', {
+          error: 'Email already exist.'
+        })
+      }
+    }
+
+
   bcrypt.hash(req.body.password, 12)
   .then((hashed_pw) => {
     var newUser = {
@@ -62,7 +91,9 @@ router.post('/', (req, res, next) => {
   }).catch((err) => {
     next(err)
   })
+  })
 })
+
 
 // delete user
 router.delete('/delete/:id', authorize, (req, res, next) => {
