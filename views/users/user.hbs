@@ -1,27 +1,27 @@
 
 <h1>My Account</h1>
+<div class="row">
   {{#each thisUser}}
-  <div class="row">
     <div class="col-lg-4">
-      <img src="{{avatar_url}}" alt="{{username}} avatar">
+      <img src="{{avatar_url}}" style="height: 350px" alt="{{username}} avatar">
     </div>
-    <div class="col-lg-4">
-      <h2>{{username}}</h2>
-      <h2>{{email}}</h2>
+    <div class="col-lg-8">
+      <h3>Username: {{username}}</h3>
+      <h3>Email: {{email}}</h3>
+      <div class="btn-group">
+        <a href="/sessions/my-posted-activities/" class="btn btn-info">My Posted Activities</a>
+      </div>
+      <div class="btn-group">
+        <a href="/users/settings/{{id}}" class="btn btn-primary">My Settings</a>
+      </div>
+      <div class="btn-group">
+        <a href="/users/delete/{{id}}" class="btn btn-success">Delete My Account</a>
+      </div>
+      <div class="btn-group">
+        <form class="" action="/sessions?_method=DELETE" method="post">
+          <input type="submit" name="delete-session" class="btn btn-warning" value="Log Out">
+        </form>
+      </div>
     </div>
-    <div class="col-lg-4">
-      <a href="/sessions/my-posted-activities/" class="btn btn-info">My Posted Activities</a>
-      <hr />
-      <a href="/users/settings/{{id}}" class="btn btn-primary">My Settings</a>
-      <hr />
-      <a href="/users/delete/{{id}}" class="btn btn-success">Delete My Account</a>
-      <hr />
-      <form class="" action="/sessions?_method=DELETE" method="post">
-      <input type="submit" name="delete-session" class="btn btn-warning" value="Log Out">
-      </form>
-    </div>
-  </div>
-  <div class="row">
-
-  </div>
   {{/each}}
+</div>

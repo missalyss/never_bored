@@ -1,0 +1,19 @@
+
+<h1>My Settings</h1>
+<form class="" action="/users/{{thisUser.id}}?_method=PUT" method="post">
+<div class="row">
+    <div class="col-lg-4">
+      <img src="{{thisUser.avatar_url}}" style="height: 350px" alt="{{thisUser.username}} avatar">
+    </div>
+    <div class="col-lg-8">
+      <label for="username">Username</label> <input id="username" name="username" type="text" class="form-control" value="{{thisUser.username}}">
+
+      <label for="email">Email</label> <input id="email" name="email" type="text" class="form-control" value="{{thisUser.email}}">
+
+      <div class="btn-group">
+          <input type="submit" name="delete-session" class="btn btn-info" value="Update">
+        </form>
+      </div>
+    </div>
+
+</div>

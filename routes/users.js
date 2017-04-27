@@ -3,16 +3,37 @@ var router = express.Router()
 var knex = require('../db/connection')
 var bcrypt = require('bcrypt-as-promised')
 
+var authorize = function (req, res, next) {
+  if (!req.session.userId) {
+    return next({
+      status: 401,
+      message: 'Unauthorized'
+    })
+  }
+  next()
+}
+
 // Render users' delete page
-router.get('/delete/:id', (req, res, next) => {
-  knex('users').where('id', req.params.id).first().then((thisUser) => {
+router.get('/delete/:id', authorize, (req, res, next) => {
+  knex('users').where('id', req.session.userId).first().then((thisUser) => {
     console.log(thisUser)
+    delete thisUser.hashed_pw
     res.render('users/delete', {thisUser})
   })
 })
 
+// Render user settings page
+router.get('/settings/:id', authorize, (req, res, next) => {
+  console.log(req.session.userId);
+  knex('users').where('id', req.session.userId).first().then((thisUser) => {
+    delete thisUser.hashed_pw
+    console.log(thisUser)
+    res.render('users/settings', {thisUser})
+  })
+})
+
 // Render user
-router.get('/:id', (req, res, next) => {
+router.get('/:id', authorize, (req, res, next) => {
   var id = req.params.id
   knex('users').where('id', id).then((thisUser) => {
     res.render('users/user', {thisUser})
@@ -44,7 +65,7 @@ router.post('/', (req, res, next) => {
 })
 
 // delete user
-router.delete('/delete/:id', (req, res, next) => {
+router.delete('/delete/:id', authorize, (req, res, next) => {
   var id = req.params.id
   var password = req.body.password
   console.log(password, id)
@@ -63,6 +84,20 @@ router.delete('/delete/:id', (req, res, next) => {
   })
   .catch((err) => {
     next(err)
+  })
+})
+
+// PUT user
+router.put('/:id', authorize, (req, res, next) => {
+  var id = req.params.id
+console.log(id)
+  var editUser = {
+    username: req.body.username,
+    email: req.body.email
+  }
+  console.log(editUser);
+  knex('users').where('id', id).update(editUser).then(() => {
+    res.redirect(`/users/${id}`)
   })
 })
 
