@@ -90,12 +90,10 @@ router.delete('/delete/:id', authorize, (req, res, next) => {
 // PUT user
 router.put('/:id', authorize, (req, res, next) => {
   var id = req.params.id
-console.log(id)
   var editUser = {
     username: req.body.username,
     email: req.body.email
   }
-  console.log(editUser);
   knex('users').where('id', id).update(editUser).then(() => {
     res.redirect(`/users/${id}`)
   })
