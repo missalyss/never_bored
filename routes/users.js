@@ -59,7 +59,7 @@ router.delete('/delete/:id', (req, res, next) => {
       res.redirect('/')
     })
   }).catch(bcrypt.MISMATCH_ERROR, () => {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
   })
   .catch((err) => {
     next(err)
@@ -73,7 +73,7 @@ router.post('/session', (req, res, next) => {
   knex('users').where('username', username).first()
   .then((row) => {
     if (!row) {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
     }
     user = row
     return bcrypt.compare(password, user.hashed_pw)
@@ -85,7 +85,7 @@ router.post('/session', (req, res, next) => {
     res.redirect(`/`)
   })
   .catch(bcrypt.MISMATCH_ERROR, () => {
-    throw { status: 400, message: 'Bad username or password' }
+    throw { status: 400, message: 'Oops! Your username or password didn\'t work. Go back and try again!' }
   })
   .catch((err) => {
     next(err)

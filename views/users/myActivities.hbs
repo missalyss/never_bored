@@ -7,9 +7,10 @@
             data-category="{{ name }} {{ cost }} {{energy}} {{time}} {{location}} {{party}} {{adult}}">
             <div class=" panel panel-default"> <!-- panel default -->
               <div class="panel-heading"> <!-- panel heading -->
-                <a class="thumb-title" href="./activities/{{id}}">{{title}}</a>
+                <h2>{{title}}</h2>
               </div> <!-- panel heading -->
               <div class="panel-body text-center"> <!-- panel body -->
+                <div class="row">
                 <div class="col-md-6">
                   <img class="img_url" src="{{img_url}}" alt="{{title}}">
                 </div>
@@ -23,7 +24,26 @@
                   <li class="li-attr">Adult Oriented: {{adult}}</li>
                 </ul>
                 <span class="label label-primary">{{name}}</span>
-                </div>
+              </div>
+            </div>
+              <hr />
+              <div class="row">
+
+              <div class="col-md-12">
+                <p>{{description}}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-md-6 text-right">
+                <a href="/activities/{{id}}/edits"><button class="btn btn-md btn-danger">Edit</button></a>
+              </div>
+              <div class="col-md-6 text-left">
+                <form action="/activities/{{id}}?_method=DELETE" method="POST">
+                  <input class="btn btn-md btn-danger" type="submit" name="delete" value="Delete">
+                </form>
+              </div>
+            </div>
               </div>
               </div> <!-- panel body -->
             </div> <!-- panel default -->

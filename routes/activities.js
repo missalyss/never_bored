@@ -12,11 +12,12 @@ var authorize = function (req, res, next) {
   next()
 }
 
-// get to the new form
+// Render New activity
 router.get('/new', authorize, (req, res, next) => {
   res.render('activities/new')
 })
 
+// Show activity
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
   return knex.select('activities.title', 'activities.id', 'activities.description', 'activities.cost', 'activities.energy', 'activities.time', 'activities.location', 'activities.party', 'activities.adult', 'activities.creator_id', 'activities.img_url', 'categories.name')
@@ -32,7 +33,7 @@ router.get('/:id', (req, res, next) => {
   })
 })
 
-// get to the edits page
+// Render edit activity
 router.get('/:id/edits', (req, res, next) => {
   const id = req.params.id
   knex('activities').select('*').where({id}).first().then((activity) => {
