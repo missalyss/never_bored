@@ -11,15 +11,14 @@
     </div>
     <div class="col-lg-4">
       <a href="/sessions/my-posted-activities/{{id}}" class="btn btn-info">My Posted Activities</a>
-      <br>
       <hr />
-      <a href="/users/settings/{{id}}" class="btn btn-info">My Settings</a>
-      <br>
+      <a href="/users/settings/{{id}}" class="btn btn-primary">My Settings</a>
       <hr />
-      <a href="/users/delete/{{id}}" class="btn btn-info">Delete My Account</a>
-      <li><form class="" action="/sessions?_method=DELETE" method="post">
-      <input type="submit" name="delete-session" class="btn btn-info" value="Log Out">
-      </form></li>
+      <a href="/users/delete/{{id}}" class="btn btn-success">Delete My Account</a>
+      <hr />
+      <form class="" action="/sessions?_method=DELETE" method="post">
+      <input type="submit" name="delete-session" class="btn btn-warning" value="Log Out">
+      </form>
     </div>
   </div>
   <div class="row">

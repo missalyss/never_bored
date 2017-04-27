@@ -2,8 +2,18 @@ var express = require('express')
 var router = express.Router()
 var knex = require('../db/connection')
 
+var authorize = function (req, res, next) {
+  if (!req.session.userId) {
+    return next({
+      status: 401,
+      message: 'I\'m sorry, but you need to be signed in to view this page! Please log in or create an account.'
+    })
+  }
+  next()
+}
+
 // get to the new form
-router.get('/new', (req, res, next) => {
+router.get('/new', authorize, (req, res, next) => {
   res.render('activities/new')
 })
 
@@ -31,7 +41,7 @@ router.get('/:id/edits', (req, res, next) => {
 })
 
 // Post activity
-router.post('/', (req, res, next) => {
+router.post('/', authorize, (req, res, next) => {
   var createActivity = {
     title: req.body.title,
     description: req.body.description,
@@ -59,7 +69,7 @@ router.post('/', (req, res, next) => {
 })
 
 // Put activity
-router.put('/:id', (req, res, next) => {
+router.put('/:id', authorize, (req, res, next) => {
   const id = req.params.id
 
   var editActivity = {
@@ -93,7 +103,7 @@ router.put('/:id', (req, res, next) => {
 })
 
 // Delete activity
-router.delete('/:id', function (req, res, next) {
+router.delete('/:id', authorize, (req, res, next) => {
   var id = req.params.id
   knex('activities').del().where({id}).then(() => {
     res.redirect('/')
