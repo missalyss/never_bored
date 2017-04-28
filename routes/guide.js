@@ -18,6 +18,10 @@ router.get('/', (req, res, next) => {
   })
 })
 
+router.get('/noresult', (req, res, next) => {
+  res.render('noresult')
+})
+
 router.get('/data', (req, res, next) => {
   console.log(req.query)
   var queryData = {
@@ -40,7 +44,7 @@ router.get('/data', (req, res, next) => {
       res.redirect(`/activities/${randomActivity.id}`)
     } else {
       // Make error message, or page
-      res.redirect('/')
+      res.redirect('/guide/noresult')
     }
   })
 })

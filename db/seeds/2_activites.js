@@ -262,6 +262,32 @@ exports.seed = function (knex) {
           adult: '🍼',
           img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18160866_1308720972580165_1498286744070520832_n.jpg',
           creator_id: 2
+        },
+        {
+          id: 21,
+          title: 'Indoor Rock Climbing',
+          description: 'Find a rock climbing gym nearby and go with friends! It\'s fun, and also good exercise.',
+          cost: '💰💰',
+          energy: '⚡️⚡️⚡️',
+          time: '⏳⏳',
+          location: '🌳',
+          party: '😎',
+          adult: '🍼',
+          img_url: 'https://www.pictastar.com/view/1500811849447758757_3140634823',
+          creator_id: 2
+        },
+        {
+          id: 22,
+          title: 'Browse Reddit',
+          description: '',
+          cost: '💰',
+          energy: '⚡️',
+          time: '⏳',
+          location: '🏠',
+          party: '🙋',
+          adult: '🥂',
+          img_url: 'https://pbs.twimg.com/profile_images/2557016514/0sdpjdwj63wnkjgleug7_400x400.png',
+          creator_id: 2
         }
 
       ])
