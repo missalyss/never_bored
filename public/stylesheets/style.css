@@ -31,11 +31,13 @@ margin-top: 50px;
 }
 
 .img_url {
-  max-height: 180px;
+  max-height: 200px;
+  max-width: 100%;
 }
 
 .show-img_url {
-  max-height: 220px;
+  max-height: 300px;
+  max-width: 100%;
 }
 
 .sidebar-col {

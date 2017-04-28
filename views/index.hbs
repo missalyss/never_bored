@@ -76,22 +76,22 @@
             <div class="col-xs-7 sidebar-col">
                 <form>
                   <h4>Location</h4>
-                    <label class="li-col">
-              <input type="checkbox" name="location" value="🌳" /> 🌳 Outside</label>
+                  <label class="li-col">
+                    <input type="checkbox" name="location" value="🏠" /> 🏠 Inside</label>
                     <br>
                     <label class="li-col">
-              <input type="checkbox" name="location" value="🏠" /> 🏠 Inside</label>
+                      <input type="checkbox" name="location" value="🌳" /> 🌳 Outside</label>
                 </form>
             </div>
             <!-- Adult -->
             <div class="col-xs-5 sidebar-col">
               <form>
-                <h4>Adult</h4>
+                <h4>Age</h4>
                 <label class="li-col">
-                  <input type="checkbox" name="adult" value="🥂" /> 🥂 Yes</label>
+                  <input type="checkbox" name="adult" value="🥂" /> 🥂 18+</label>
                   <br>
                   <label class="li-col">
-                    <input type="checkbox" name="adult" value="🍼" /> 🍼 No‍</label>
+                    <input type="checkbox" name="adult" value="🍼" /> 🍼 Any</label>
                   </form>
                 </div>
             <!-- Party -->
@@ -125,17 +125,17 @@
                   <a class="thumb-title" href="./activities/{{id}}">{{title}}</a>
                 </div> <!-- panel heading -->
                 <div class="panel-body text-center"> <!-- panel body -->
-                  <div class="col-md-6">
+                  <div class="col-md-7">
                     <img class="img_url" src="{{img_url}}" alt="{{title}}">
                   </div>
-                  <div class="col-md-6 text-center">
-                    <ul class="text-left">
+                  <div class="col-md-5">
+                    <ul class="text-left li-attr">
                     <li class="li-attr">With who: {{party}}</li>
                     <li class="li-attr">In or out: {{location}}</li>
                     <li class="li-attr">Cost: {{cost}}</li>
                     <li class="li-attr">Energy level: {{energy}}</li>
-                    <li class="li-attr">Time commitment: {{time}}</li>
-                    <li class="li-attr">18/21+ {{adult}}</li>
+                    <li class="li-attr">Time: {{time}}</li>
+                    <li class="li-attr">Age: {{adult}}</li>
                   </ul>
                   <span class="label label-primary">{{name}}</span>
                   </div>
