@@ -122,7 +122,7 @@ exports.seed = function (knex) {
         },
         {
           id: 10,
-          title: 'Keys On Main: Ladies Night',
+          title: 'Keys On Main',
           description: 'Piano Dueling Bar. Drinks semi cheap, fun = extreme',
           cost: '💰💰',
           energy: '⚡️⚡️',
@@ -148,7 +148,7 @@ exports.seed = function (knex) {
         },
         {
           id: 12,
-          title: 'Thai Tom and Good Will',
+          title: 'Thai Tom Good Will',
           description: 'Thai Tom is the best Thai food in Seattle. They usually have a line that queues outside, so after you put your name in, cross the street to Good Will and look around at weird and goofy stuff. Hygine (at both locations) comes at a concern, but totally worth the trip to the emergency room. At Thai Tom, get the Poor Manodle or classic Chicken Phad Thai is always good.',
           cost: '💰',
           energy: '⚡️',
@@ -197,6 +197,71 @@ exports.seed = function (knex) {
           adult: '🍼',
           img_url: 'http://www.fiuts.org/events/calendar/Greenlake_3.jpg/@@images/image/preview',
           creator_id: 1
+        },
+        {
+          id: 16,
+          title: 'Bid Day',
+          description: 'take a trip down memory lane by supporting your new pledged sisters into the family!',
+          cost: '💰💰💰',
+          energy: '⚡️⚡️⚡️',
+          time: '⏳⏳⏳',
+          location: '🌳',
+          party: '😎',
+          adult: '🍼',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/s750x750/sh0.08/e35/15877388_564910980382559_5826949892458676224_n.jpg',
+          creator_id: 2
+        },
+        {
+          id: 17,
+          title: 'Keraton: Indonesian Festival 2017',
+          description: 'Keraton is billed as "the second largest Indonesian festival in the nation," and promises dance performances, live music, games, and food',
+          cost: '💰',
+          energy: '⚡️',
+          time: '⏳⏳⏳',
+          location: '🌳',
+          party: '😎',
+          adult: '🍼',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e15/11375130_1609637385917389_1806484461_n.jpg',
+          creator_id: 2
+        },
+        {
+          id: 18,
+          title: 'Seattle Ghost Tours',
+          description: 'Join real ghost hunters for an evening of spirited tales within Seattle’s unique neighborhoods, as they take you on a guided tour of some of the cities most haunted sites, including our very own section of Seattle’s famous underground.',
+          cost: '💰💰',
+          energy: '⚡️⚡️⚡️',
+          time: '⏳⏳',
+          location: '🏠',
+          party: '😎',
+          adult: '🍼',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/p480x480/15043713_168172553648923_114912382580424704_n.jpg',
+          creator_id: 2
+        },
+        {
+          id: 19,
+          title: 'Seattle Great Wheel',
+          description: 'The Seattle Great Wheel is a giant Ferris wheel at Pier 57 on Elliott Bay in Seattle, Washington. With an overall height of 175 feet, it was the tallest Ferris wheel on the West Coast of the United States when it opened on June 29, 2012',
+          cost: '💰💰',
+          energy: '⚡️',
+          time: '⏳',
+          location: '🏠',
+          party: '❤️',
+          adult: '🍼',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/18013098_1470424239674541_7937745843916898304_n.jpg',
+          creator_id: 2
+        },
+        {
+          id: 20,
+          title: 'The Crab Pot',
+          description: 'Relaxed eatery & bar known for seafood served on paper-covered tables to diners with bibs & mallets.',
+          cost: '💰💰💰',
+          energy: '⚡️',
+          time: '⏳',
+          location: '🏠',
+          party: '👶',
+          adult: '🍼',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18160866_1308720972580165_1498286744070520832_n.jpg',
+          creator_id: 2
         }
 
       ])

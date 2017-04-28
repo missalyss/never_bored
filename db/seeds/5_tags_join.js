@@ -72,6 +72,36 @@ exports.seed = function (knex) {
           id: 14,
           activity_id: 14,
           category_id: 3
+        },
+        {
+          id: 15,
+          activity_id: 15,
+          category_id: 1
+        },
+        {
+          id: 16,
+          activity_id: 16,
+          category_id: 7
+        },
+        {
+          id: 17,
+          activity_id: 17,
+          category_id: 3
+        },
+        {
+          id: 18,
+          activity_id: 18,
+          category_id: 3
+        },
+        {
+          id: 19,
+          activity_id: 19,
+          category_id: 3
+        },
+        {
+          id: 20,
+          activity_id: 20,
+          category_id: 4
         }
       ])
     }).then(function () {
