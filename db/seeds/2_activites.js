@@ -117,7 +117,7 @@ exports.seed = function (knex) {
           location: '🏠',
           party: '👶',
           adult: '🍼',
-          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18095050_634483400090832_6667349763924426752_n.jpg',
+          img_url: 'https://s-media-cache-ak0.pinimg.com/736x/30/72/a7/3072a785701e68beb403de11d6044ac2.jpg',
           creator_id: 2
         },
         {

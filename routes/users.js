@@ -42,19 +42,15 @@ router.get('/:id', authorize, (req, res, next) => {
 
 // Register user
 router.post('/', (req, res, next) => {
-  // Validation: Does Username Exists?
   if (!req.body.username || !req.body.password || !req.body.email || !req.body.avatar_url) {
-    return res.render('users/signup', {error: 'Fill in all fields and make sure an avatar is selected'})
+    return res.render('users/signup', {error: 'Fill in all fields. (And make sure an avatar is selected!)'})
   }
-
   if (req.body.password !== req.body['confirm-password']) {
-    return res.render('users/signup', {error: 'Password does not match'})
+    return res.render('users/signup', {error: 'Passwords do not match'})
   }
 
   knex('users').then((allUsers) => {
-
     for (element of allUsers) {
-
       if (element.username === req.body.username) {
         console.log('existing, Reject')
         return res.render('users/signup', {
@@ -69,31 +65,28 @@ router.post('/', (req, res, next) => {
         })
       }
     }
-
-
-  bcrypt.hash(req.body.password, 12)
-  .then((hashed_pw) => {
-    var newUser = {
-      username: req.body.username,
-      email: req.body.email,
-      hashed_pw: hashed_pw,
-      avatar_url: req.body.avatar_url
-    }
-    console.log(newUser)
-    return knex('users').insert(newUser, '*')
-  })
-  .then((users) => {
-    var user = users[0]
-    delete user.hashed_pw
-    req.session.userId = user.id
-    req.session.username = user.username
-    res.redirect(`/`)
-  }).catch((err) => {
-    next(err)
-  })
+    bcrypt.hash(req.body.password, 12)
+    .then((hashed_pw) => {
+      var newUser = {
+        username: req.body.username,
+        email: req.body.email,
+        hashed_pw: hashed_pw,
+        avatar_url: req.body.avatar_url
+      }
+      console.log(newUser)
+      return knex('users').insert(newUser, '*')
+    })
+    .then((users) => {
+      var user = users[0]
+      delete user.hashed_pw
+      req.session.userId = user.id
+      req.session.username = user.username
+      res.redirect(`/`)
+    }).catch((err) => {
+      next(err)
+    })
   })
 })
-
 
 // delete user
 router.delete('/delete/:id', authorize, (req, res, next) => {
