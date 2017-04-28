@@ -16,24 +16,25 @@
             <!-- panel heading -->
             <div class="panel-body text-center">
                 <!-- panel body -->
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <img class="show-img_url" src="{{img_url}}" alt="{{title}}">
                 </div>
+                <div class="col-md-6 text-center">
+                  <h3>Activity Details</h3>
+                  <ul class="text-left">
+                    <li class="li-attr">With who: {{party}}</li>
+                    <li class="li-attr">In or out: {{location}}</li>
+                    <li class="li-attr">Cost: {{cost}}</li>
+                    <li class="li-attr">Energy level: {{energy}}</li>
+                    <li class="li-attr">Time: {{time}}</li>
+                    <li class="li-attr">Age: {{adult}}</li>
+                  </ul>
+                  <span class="label label-primary">{{name}}</span>
+                </div>
                 <div class="col-md-12 well show-well">
-                  <div class="col-md-4 text-center">
-                    <ul class="text-left">
-                      <li class="li-attr">Party: {{party}}</li>
-                      <li class="li-attr">Where: {{location}}</li>
-                      <li class="li-attr">Cost: {{cost}}</li>
-                      <li class="li-attr">Energy: {{energy}}</li>
-                      <li class="li-attr">Time: {{time}}</li>
-                      <li class="li-attr">Adult Oriented: {{adult}}</li>
-                    </ul>
-                    <span class="label label-primary">{{name}}</span>
-                  </div>
-                  <div class="col-md-8 text-left">
-                    <p>{{description}}</p>
-                  </div>
+                  <p>{{description}}</p>
+                  <!-- <div class="col-md-8 text-left">
+                  </div> -->
 
                 </div>
             </div>
