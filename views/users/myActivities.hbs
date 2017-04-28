@@ -40,16 +40,17 @@
             </div>
               <hr />
 
+
             <div class="row">
 
-              <div class="text-center">
+              <div class="col-md-6 col-sm-6 text-center">
+                <a href="/activities/edits/{{id}}"><button class="btn btn-md btn-info">Edit</button></a>
+              </div>
+              <div class="col-md-6 col-sm-6 text-center">
                 <form action="/activities/{{id}}?_method=DELETE" method="POST">
-                  <a href="/activities/edits/{{id}}"><button class="btn btn-md btn-info">Edit</button></a>
                   <input id="deleteActivity" class="btn btn-md btn-danger" type="submit" name="delete" value="Delete">
                 </form>
               </div>
-
-
             </div>
               </div>
               </div> <!-- panel body -->
