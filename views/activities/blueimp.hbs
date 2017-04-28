@@ -1,0 +1,29 @@
+<!-- JavaScript Includes -->
+<script xsrc="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script defer src="assets/js/jquery.knob.js"></script>
+
+<!-- jQuery File Upload Dependencies -->
+<script src="assets/js/jquery.ui.widget.js"></script>
+<script src="assets/js/jquery.iframe-transport.js"></script>
+<script src="assets/js/jquery.fileupload.js"></script>
+
+<!-- Our main JS file -->
+<script src="assets/js/script.js"></script>
+
+
+<form id="upload" method="post" action="/activities/images" enctype="multipart/form-data">
+			<div id="drop">
+				Drop Here
+
+				<a>Browse</a>
+				<input type="file" name="upl" multiple />
+			</div>
+
+			<ul>
+        <li class="working">
+        	<input type="text" value="0" data-width="48" data-height="48" data-fgColor="#0788a5" data-readOnly="1" data-bgColor="#3e4043" />
+        	<p>Sunset.jpg <i>145 KB</i></p>
+        	<span></span>
+        </li>			</ul>
+
+		</form>

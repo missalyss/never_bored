@@ -18,6 +18,17 @@ router.get('/new', authorize, (req, res, next) => {
   res.render('activities/new')
 })
 
+// Render image uploading
+router.get('/images', (req, res, next) => {
+  res.render('activities/blueimp')
+})
+
+router.post('/images', (req, res, next) => {
+  var image = req.body
+  console.log(image)
+  res.send(req.body)
+})
+
 // Show activity
 router.get('/:id', (req, res, next) => {
   var id = req.params.id
@@ -50,7 +61,7 @@ router.post('/', authorize, (req, res, next) => {
   if(!req.body.description){
     return res.render('activities/new', {error: 'need added description'})
   }
-  
+
   var createActivity = {
     title: req.body.title,
     description: req.body.description,
