@@ -25,27 +25,21 @@
                 </div>
                 <div class="col-md-6 text-center">
                   <ul class="text-left">
-                  <li class="li-attr">Party: {{party}}</li>
-                  <li class="li-attr">Where: {{location}}</li>
+                  <li class="li-attr">With who: {{party}}</li>
+                  <li class="li-attr">In or out: {{location}}</li>
                   <li class="li-attr">Cost: {{cost}}</li>
-                  <li class="li-attr">Energy: {{energy}}</li>
+                  <li class="li-attr">Energy level: {{energy}}</li>
                   <li class="li-attr">Time: {{time}}</li>
-                  <li class="li-attr">Adult Oriented: {{adult}}</li>
+                  <li class="li-attr">Age: {{adult}}</li>
                 </ul>
                 <span class="label label-primary">{{name}}</span>
               </div>
             </div>
               <hr />
-              <div class="row">
 
-              <div class="col-md-12">
-                <p>{{description}}</p>
-              </div>
-            </div>
-            <hr />
             <div class="row">
               <div class="col-md-6 col-sm-6 text-center">
-                <a href="/activities/{{id}}/edits"><button class="btn btn-md btn-danger">Edit</button></a>
+                <a href="/activities/{{id}}/edits"><button class="btn btn-md btn-info">Edit</button></a>
               </div>
               <div class="col-md-6 col-sm-6 text-center">
                 <form action="/activities/{{id}}?_method=DELETE" method="POST">

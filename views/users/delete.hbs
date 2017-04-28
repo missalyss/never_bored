@@ -1,20 +1,20 @@
-<div class="background-shade">
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
 
-      <p>This action cannot be undone.</p>
-      <p>Are you sure you want to delete? Enter username and password to confirm.</p>
+<div class="row well">
+  <div class="col-lg-6 col-lg-offset-3">
 
-      <div class="form-group">
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
-      </div>
+    <p>This action cannot be undone.</p>
+    <p>Are you sure you want to delete? Enter username and password to confirm.</p>
 
+    <div class="form-group">
+      <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+    </div>
+
+    <div class="form-group col-lg-12">
       <form class="" action="/users/delete/{{thisUser.id}}?_method=DELETE" method="post">
         <input type="submit" name="delete-user-submit" class="btn btn-danger" value="Yes, I want to delete my account">
-        <br>
-        <a href="/users/{{thisUser.id}}" class="btn btn-info">Go Back</a>
       </form>
-
+        <a href="/users/{{thisUser.id}}" class="btn btn-info">Go Back</a>
     </div>
+
   </div>
 </div>
