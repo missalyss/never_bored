@@ -273,13 +273,13 @@ exports.seed = function (knex) {
           location: '🌳',
           party: '😎',
           adult: '🍼',
-          img_url: 'https://www.pictastar.com/view/1500811849447758757_3140634823',
+          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/18161020_658116651062946_6804407624948252672_n.jpg',
           creator_id: 2
         },
         {
           id: 22,
           title: 'Browse Reddit',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt pharetra nibh vitae faucibus. Proin et turpis maximus, facilisis diam eget, congue metus. Nunc commodo imperdiet consequat. Aliquam congue sem vitae quam ullamcorper, vitae convallis odio venenatis.',
           cost: '💰',
           energy: '⚡️',
           time: '⏳',
