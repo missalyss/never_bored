@@ -10,9 +10,10 @@ router.get('/', (req, res, next) => {
   .innerJoin('categories', 'tags_join.category_id', 'categories.id')
   .orderBy('activities.id', 'asc')
   .then(allActivities => {
+    allActivities = shuffle(allActivities)
     res.render('index', { allActivities })
   }).catch(err => {
-    console.log(err);
+    console.log(err)
     next(err)
   })
 })
@@ -24,5 +25,18 @@ router.get('/login', (req, res, next) => {
 router.get('/signup', (req, res, next) => {
   res.render('users/signup')
 })
+
+// Shuffle array
+function shuffle (array1) {
+  var ctr = array1.length, temp, index
+  while (ctr > 0) {
+    index = Math.floor(Math.random() * ctr)
+    ctr--
+    temp = array1[ctr]
+    array1[ctr] = array1[index]
+    array1[index] = temp
+  }
+  return array1
+}
 
 module.exports = router
