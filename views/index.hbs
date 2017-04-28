@@ -114,8 +114,13 @@
       </div>
   </div>
   <div id="main">
-      <div class="col-md-12">
-        <!-- <div class="row"> -->
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h1>All Activities</h1>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-md-12">
             {{#each allActivities}}
             <div class="col-md-6 activity"
               data-id="{{ title }}"
@@ -137,7 +142,7 @@
                     <li class="li-attr">Time: {{time}}</li>
                     <li class="li-attr">Age: {{adult}}</li>
                   </ul>
-                  <span class="label label-primary">{{name}}</span>
+                  <h4><span class="label label-primary">{{name}}</span></h4>
                   </div>
                 </div>
                 </div> <!-- panel body -->
