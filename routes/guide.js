@@ -21,8 +21,11 @@ router.get('/', (req, res, next) => {
 router.get('/data', (req, res, next) => {
   console.log(req.query)
   var queryData = {
+    cost: req.query.cost,
     location: req.query.location,
-    cost: req.query.cost
+    time: req.query.time,
+    energy: req.query.energy,
+    party: req.query.party
   }
   knex.select('activities.title', 'activities.id', 'activities.cost', 'activities.energy', 'activities.time', 'activities.location', 'activities.party', 'activities.adult', 'activities.creator_id', 'activities.img_url', 'categories.name')
   .from('activities')
@@ -32,7 +35,7 @@ router.get('/data', (req, res, next) => {
   .then(guideActivity => {
     var arrayLength = guideActivity.length
     //
-    if (guideActivity.length > 1) {
+    if (guideActivity.length > 0) {
       var randomActivity = guideActivity[Math.floor(Math.random() * arrayLength)]
       res.redirect(`/activities/${randomActivity.id}`)
     } else {
