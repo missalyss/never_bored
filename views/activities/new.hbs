@@ -4,101 +4,123 @@
 </div>
 {{/if}}
 
+<h1>New Activity</h1>
+
 <form method="POST" action="/activities" class="well">
-  <div class="form-group">
-    <label for="title">Title</label> <input id="title" name="title"type="text" class="form-control" value="{{index.title}}">
+
+
+<div class="row">
+  <div class="form-group col-sm-5">
+    <label for="title">Title</label> <input id="title" name="title" type="text" class="form-control" placeholder="In a few words, what is your activity called?"value="">
   </div>
-  <div class="form-group">
-    <label for="description">Description</label> <input id="description" name="description" type="text" class="form-control" value="{{index.description}}">
+  <div class="form-group col-sm-8">
+    <label for="description">Description</label>
+    <textarea class="form-control" rows="4" id="description" name="description" placeholder="Describe your activity accurately and as much detail as possible. Show the people why your idea is cool and fun! Don't forget to leave examples."></textarea>
   </div>
+</div>
+
+  <hr>
 
 <!-- Emoji's -->
-<p><strong>Cost</strong></p>
-<label class="form-check-label" for="cost1">
-<input class="form-check-input" id="cost1" type="radio" name="cost" value="💰">💰</label></br>
+<div class="row form-group">
 
-<label class="form-check-label" for="cost2">
-<input class="form-check-input" id="cost2" type="radio" name="cost" value="💰💰">💰💰</label></br>
+  <div class="col-sm-3">
+    <p><strong>Cost</strong></p>
+    <label class="form-check-label" for="cost1">
+    <input class="form-check-input" id="cost1" type="radio" name="cost" value="💰"> 💰</label></br>
 
-<label class="form-check-label" for="cost3">
-<input class="form-check-input" id="cost3" type="radio" name="cost" value="💰💰💰">💰💰💰</label></br>
+    <label class="form-check-label" for="cost2">
+    <input class="form-check-input" id="cost2" type="radio" name="cost" value="💰💰"> 💰💰</label></br>
 
-<p><strong>Energy</strong></p>
-<label class="form-check-label" for="energy1">
-<input class="form-check-input" id="energy1" type="radio" name="energy" value="⚡️">⚡️</label></br>
+    <label class="form-check-label" for="cost3">
+    <input class="form-check-input" id="cost3" type="radio" name="cost" value="💰💰💰"> 💰💰💰</label></br>
+  </div>
 
-<label class="form-check-label" for="energy2">
-<input class="form-check-input" id="energy2" type="radio" name="energy" value="⚡️⚡️">⚡️⚡️</label></br>
+  <div class="col-sm-3">
+    <p><strong>Energy Level</strong></p>
+    <label class="form-check-label" for="energy1">
+    <input class="form-check-input" id="energy1" type="radio" name="energy" value="⚡️"> ⚡️</label></br>
 
-<label class="form-check-label" for="energy3">
-<input class="form-check-input" id="energy3" type="radio" name="energy" value="⚡️⚡️⚡️">⚡️⚡️⚡️</label></br>
+    <label class="form-check-label" for="energy2">
+    <input class="form-check-input" id="energy2" type="radio" name="energy" value="⚡️⚡️"> ⚡️⚡️</label></br>
 
-<p><strong>Time</strong></p>
-<label class="form-check-label" for="time1">
-<input class="form-check-input" id="time1" type="radio" name="time" value="⏰">⏰</label></br>
+    <label class="form-check-label" for="energy3">
+    <input class="form-check-input" id="energy3" type="radio" name="energy" value="⚡️⚡️⚡️"> ⚡️⚡️⚡️</label></br>
+  </div>
 
-<label class="form-check-label" for="time2">
-<input class="form-check-input" id="time2" type="radio" name="time" value="⏰⏰">⏰⏰</label></br>
+  <div class="col-sm-3">
+    <p><strong>Time Commitment</strong></p>
+    <label class="form-check-label" for="time1">
+    <input class="form-check-input" id="time1" type="radio" name="time" value="⏳"> ⏳ 0-1 hrs</label></br>
 
-<label class="form-check-label" for="time3">
-<input class="form-check-input" id="time3" type="radio" name="time" value="⏰⏰⏰">⏰⏰⏰</label></br>
+    <label class="form-check-label" for="time2">
+    <input class="form-check-input" id="time2" type="radio" name="time" value="⏳⏳"> ⏳⏳ 1-3 hrs</label></br>
 
-<p><strong>Location</strong></p>
-<label class="form-check-label" for="location1">
-<input class="form-check-input" id="location1" type="radio" name="location" value="🌳">🌳</label></br>
+    <label class="form-check-label" for="time3">
+    <input class="form-check-input" id="time3" type="radio" name="time" value="⏳⏳⏳"> ⏳⏳⏳ 3+ hrs</label></br>
+  </div>
 
-<label class="form-check-label" for="location2">
-<input class="form-check-input" id="location2" type="radio" name="location" value="🏡">🏡</label></br>
+  <div class="col-sm-3">
+    <p><strong>Inside or Outside?</strong></p>
 
+    <label class="form-check-label" for="location2">
+    <input class="form-check-input" id="location2" type="radio" name="location" value="🏠"> 🏠 Inside</label></br>
+    <label class="form-check-label" for="location1">
+      <input class="form-check-input" id="location1" type="radio" name="location" value="🌳"> 🌳 Outside</label></br>
+  </div>
+</div>
 
-<p><strong>party</strong></p>
-<label class="form-check-label" for="adult">
-<input class="form-check-input" id="party" type="radio" name="party" value="💑">💑</label></br>
+<div class="row form-group">
 
-<label class="form-check-label" for="friends">
-<input class="form-check-input" id="party" type="radio" name="party" value="👯">👯</label></br>
+  <div class="col-sm-3">
+  <p><strong>Who is it best with?</strong></p>
+  <label class="form-check-label" for="date">
+  <input class="form-check-input" id="date" type="radio" name="party" value="❤️"> ❤️ Date</label></br>
 
-<label class="form-check-label" for="family">
-<input class="form-check-input" id="party" type="radio" name="party" value="👨‍👩‍👦‍👦">👨‍👩‍👦‍👦</label></br>
+  <label class="form-check-label" for="friends">
+  <input class="form-check-input" id="friends" type="radio" name="party" value="😎"> 😎 Friends</label></br>
 
-<label class="form-check-label" for="solo">
-<input class="form-check-input" id="party" type="radio" name="party" value="🙋">🙋</label></br>
+  <label class="form-check-label" for="family">
+  <input class="form-check-input" id="family" type="radio" name="party" value="👶"> 👶 Family</label></br>
 
-<p><strong>adult</strong></p>
-<label class="form-check-label" for="adult">
-<input class="form-check-input" id="adult" type="radio" name="adult" value="true">💑</label></br>
+  <label class="form-check-label" for="solo">
+  <input class="form-check-input" id="solo" type="radio" name="party" value="🙋"> 🙋 Solo</label></br>
+  </div>
 
-<label class="form-check-label" for="friends">
-<input class="form-check-input" id="adult" type="radio" name="adult" value="false">👯</label></br>
+  <div class="col-sm-3">
+  <p><strong>What age is it most appropriate for?</strong></p>
+  <label class="form-check-label" for="adultYes">
+  <input class="form-check-input" id="adultYes" type="radio" name="adult" value="🥂"> 🥂 18+</label></br>
 
+  <label class="form-check-label" for="adultNo">
+  <input class="form-check-input" id="adultNo" type="radio" name="adult" value="🍼"> 🍼 Any age</label></br>
+  </div>
 
+  <div class="col-sm-3">
 
-  <select name="select_categories">
-    <option value="1">active</option>
-    <option value="2">creative</option>
-    <option value="3">entertainment</option>
-    <option value="4">food</option>
-    <option value="5">relaxing</option>
-    <option value="6">romantic</option>
-    <option value="7">social</option>
+  <label class="form-check-label"for="select_categories">What category does it belong to?</label>
+  <select id="select_categories" name="select_categories">
+    <option value="1">Active</option>
+    <option value="2">Creative</option>
+    <option value="3">Entertainment</option>
+    <option value="4">Food</option>
+    <option value="5">Relaxing</option>
+    <option value="6">Romantic</option>
+    <option value="7">Social</option>
   </select>
-
-
-
-
-
+  </div>
+</div>
+<hr>
 
 <!-- avatar pictures -->
-  <div class="form-group">
-    <label for="img_url">Img_url</label> <input id="img_url" name="img_url" type="string" class="form-control" value="{{index.img_url}}">
+<div class="row">
+  <div class="form-group col-sm-11">
+    <label for="img_url">Add an image URL or use our default</label> <input id="img_url" name="img_url" type="string" class="form-control" value="https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e15/11311234_865753723479652_393321729_n.jpg">
   </div>
-
-  <div class="form-group">
-    <label for="creator_id">Creator_id</label> <input id="creator_id" name="creator_id" type="string" class="form-control" value="{{index.creator_id}}">
-  </div>
-
-  <div class="form-group">
-    <input id="submit" type="submit">
+<hr>
+  <div class="form-group col-sm-11">
+    <input class="btn btn-md btn-primary" id="submit" type="submit" value="Create">
+    <a class="btn btn-md btn-info"href="/">Go Back</a>
   </div>
 
 </form>

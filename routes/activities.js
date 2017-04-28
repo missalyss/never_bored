@@ -37,9 +37,7 @@ router.get('/:id', (req, res, next) => {
 // Render edit activity
 router.get('/:id/edits', authorize, (req, res, next) => {
   const id = req.params.id
-  console.log(id)
   knex('activities').select('*').where({id}).first().then((activity) => {
-    console.log(activity)
     res.render('activities/edits', {activity})
   })
 })
@@ -56,7 +54,7 @@ router.post('/', authorize, (req, res, next) => {
     party: req.body.party,
     adult: req.body.adult,
     img_url: req.body['img_url'],
-    creator_id: req.body['creator_id']
+    creator_id: req.session.userId
   }
 
   var addCategory = {
