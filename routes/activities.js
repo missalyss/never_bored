@@ -35,7 +35,7 @@ router.get('/:id', (req, res, next) => {
 })
 
 // Render edit activity
-router.get('/:id/edits', authorize, (req, res, next) => {
+router.get('/edits/:id', authorize, (req, res, next) => {
   const id = req.params.id
   knex('activities').select('*').where({id}).first().then((activity) => {
     res.render('activities/edits', {activity})
