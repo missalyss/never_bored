@@ -27,7 +27,7 @@ router.get('/my-posted-activities/', authorize, (req, res, next) => {
   .innerJoin('categories', 'tags_join.category_id', 'categories.id')
   .orderBy('activities.id', 'asc')
   .then((postedActivities) => {
-    res.render('users/myActivities', {postedActivities})
+    res.render('users/myActivities', {postedActivities, userId})
   })
   .catch(err => {
     next(err)
