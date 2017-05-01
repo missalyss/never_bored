@@ -2,9 +2,9 @@
 An app to help cure boredom! never_bored inspires users to have unique & fun experiences with friends, family & while riding solo! Jump on the band wagon and help your community to live a little "extra". 
 
 
-You have autonomy to choose your inspiration. Engage with the filter and be inspired with the results. 
+You have autonomy to choose your inspiration. Engage with our app and be inspired with the results. 
 
-![screenshot of filter](http://allmyfiles/dfilter-neverbored)
+![screenshot of filter](http://allmyfiles/filter-neverbored)
 
 ## Features 
 In order to look at our app please visit us: https://never-bored.herokuapp.com/ or clone down this repo. 
