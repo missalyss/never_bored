@@ -8,9 +8,17 @@ You have autonomy to choose your inspiration. Engage with our app and be inspire
 
 Landing on the homepage, activities will populate for the user to choose from. Engage with the filter feature to choose an activity closer to your budget, time & group preference. 
 
-![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25591068/f591d9c0-2e67-11e7-83c0-9c2d6ea9c546.png)
+![screenshot of homepage](https://cloud.githubusercontent.com/assets/24262724/25591068/f591d9c0-2e67-11e7-83c0-9c2d6ea9c546.png)
 
 ## Features 
+
+Filter Feature: Engage with the filter feature to choose an activity closer to your budget, time & group preference. 
+![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png)
+
+
+New Activity: Create a new activity by choosing the title, price, age appropriate, group preference and image. 
+
+![screenshot of new activity](https://cloud.githubusercontent.com/assets/24262724/25591056/ea2d929a-2e67-11e7-9c4a-f582d336a728.png)
 In order to look at our app please visit us: https://never-bored.herokuapp.com/ or clone down this repo. 
 
 ### Install 
