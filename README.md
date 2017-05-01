@@ -4,6 +4,10 @@ An app to help cure boredom! never_bored inspires users to have unique & fun exp
 
 You have autonomy to choose your inspiration. Engage with our app and be inspired with the results. 
 
+### homepage
+
+Landing on the homepage, activities will populate for the user to choose from. Engage with the filter feature to choose an activity closer to your budget, time & group preference. 
+
 ![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25591068/f591d9c0-2e67-11e7-83c0-9c2d6ea9c546.png)
 
 ## Features 
