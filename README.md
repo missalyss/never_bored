@@ -4,7 +4,7 @@ An app to help cure boredom! never_bored inspires users to have unique & fun exp
 
 You have autonomy to choose your inspiration. Engage with our app and be inspired with the results. 
 
-![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png)
+![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25591068/f591d9c0-2e67-11e7-83c0-9c2d6ea9c546.png)
 
 ## Features 
 In order to look at our app please visit us: https://never-bored.herokuapp.com/ or clone down this repo. 
