@@ -1,8 +1,7 @@
 # NeverBored
-An app to help cure boredom! NeverBored inspires users to have unique & fun experiences with friends, family & while riding solo! Jump on the band wagon and help your community to live a little "extra".
+An app to help cure boredom! NeverBored is a community-driven web-app for collecting and sharing activity ideas that inspire users to find new and fun experiences with friends, family, a date, or while riding solo!
 
-
-You have autonomy to choose your inspiration. Engage with our app and be inspired with the results.
+Developed April 2017
 
 ## Features
 
@@ -14,14 +13,14 @@ The homepage will populate randomly posted activities for the user to explore. A
 
 (Left:) Filter activities based on categories and activity attributes. Results will update in real-time on the page.
 
-![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png) | ![screenshot of find an activity](docs/neverbored-find.png)
+![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png) | ![screenshot of find an activity](docs/neverbored-findact.png)
 
 (Right:) The "Find an Activity" guide walks the user through a series of questions to narrow down a custom, randomized activity that fits their selected criteria.
 
 #### Users
 Registered users can create a new activities to add to the public collection.
 
-![screenshot of new activity](https://cloud.githubusercontent.com/assets/24262724/25591056/ea2d929a-2e67-11e7-9c4a-f582d336a728.png)
+![screenshot of new activity](docs/neverbored-new.png)
 
 #### Future Development
 
