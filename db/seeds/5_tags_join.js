@@ -54,11 +54,6 @@ exports.seed = function (knex) {
           category_id: 3
         },
         {
-          id: 11,
-          activity_id: 11,
-          category_id: 6
-        },
-        {
           id: 12,
           activity_id: 12,
           category_id: 6

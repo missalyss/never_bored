@@ -134,19 +134,6 @@ exports.seed = function (knex) {
           creator_id: 2
         },
         {
-          id: 11,
-          title: 'Netflix and Chill',
-          description: '15 minutes into Netflix n chill and you tryna figure out how you gonna make this transition. Watch a movie you\'re both into, but not SO into that you\'ll be bummed if you miss the ending 😉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tincidunt pharetra nibh vitae faucibus. Proin et turpis maximus, facilisis diam eget, congue metus.',
-          cost: '💰',
-          energy: '⚡️',
-          time: '⏳⏳⏳',
-          location: '🏠',
-          party: '❤️',
-          adult: '🥂',
-          img_url: 'https://scontent-ams3-1.cdninstagram.com/t51.2885-15/e35/18095100_1896851140558591_7346750333873291264_n.jpg',
-          creator_id: 1
-        },
-        {
           id: 12,
           title: 'Thai Tom and Good Will',
           description: 'Thai Tom is the best Thai food in Seattle. They usually have a line that queues outside, so after you put your name in, cross the street to Good Will and look around at weird and goofy stuff. Hygeine (at both locations) comes at a concern, but totally worth the trip to the emergency room. At Thai Tom, get the Poor Manodle or classic Chicken Phad Thai is always good.',

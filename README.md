@@ -1,73 +1,61 @@
-# never_bored
-An app to help cure boredom! never_bored inspires users to have unique & fun experiences with friends, family & while riding solo! Jump on the band wagon and help your community to live a little "extra". 
+# NeverBored
+An app to help cure boredom! NeverBored is a community-driven web-app for collecting and sharing activity ideas that inspire users to find new and fun experiences with friends, family, a date, or while riding solo!
 
+Developed April 2017
 
-You have autonomy to choose your inspiration. Engage with our app and be inspired with the results. 
+## Features
 
-### homepage
+The homepage will populate randomly posted activities for the user to explore. Activity details are provided (such as time commitment, energy level, cost, etc.)
 
-Landing on the homepage, activities will populate for the user to choose from. Engage with the filter feature to choose an activity closer to your budget, time & group preference. 
+![screenshot of homepage](docs/neverbored-landing.png)
 
-![screenshot of homepage](https://cloud.githubusercontent.com/assets/24262724/25591068/f591d9c0-2e67-11e7-83c0-9c2d6ea9c546.png)
+#### Find an Activity
 
-## Features 
+(Left:) Filter activities based on categories and activity attributes. Results will update in real-time on the page.
 
-Filter Feature: Engage with the filter feature to choose an activity closer to your budget, time & group preference. 
-![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png)
+![screenshot of filter](https://cloud.githubusercontent.com/assets/24262724/25590720/87752ae2-2e66-11e7-808e-ce7e3dc1d824.png) | ![screenshot of find an activity](docs/neverbored-findact.png)
 
+(Right:) The "Find an Activity" guide walks the user through a series of questions to narrow down a custom, randomized activity that fits their selected criteria.
 
-New Activity: Create a new activity by choosing the title, price, age appropriate, group preference and image. 
+#### Users
+Registered users can create a new activities to add to the public collection.
 
-![screenshot of new activity](https://cloud.githubusercontent.com/assets/24262724/25591056/ea2d929a-2e67-11e7-9c4a-f582d336a728.png)
-In order to look at our app please visit us: https://never-bored.herokuapp.com/ or clone down this repo. 
+![screenshot of new activity](docs/neverbored-new.png)
 
-### Install 
-Npm install 
+#### Future Development
 
-cookie-parser
-method_override
-morgan
-pg
-serve-favicon 
-body-arser
-bcrypt-as-promise
+- Users can leave review comments on activities
+- Activities are grouped by location/city
+- Users can upload their own images
 
-![screenshot of what to download](http://allmyfiles/download-neverbored)
+## Usage and Installation
+A deployed version of this web app can be viewed on Heroku:
+https://never-bored.herokuapp.com/
 
+To download and view the code, fork and clone the repository and run 'npm install' to download the required dependencies.
 
+## Technology
 
-#### Tech
-
-- Node.js
-- PostgreSQL
-- ExpressJS
-- Knex.js
+##### Frontend
+- JavaScript
+- jQuery
 - Handlebars
 - Bootstrap
-- jQuery 
-- Javascript 
 
+##### Backend
+- Node.js
+- ExpressJS
+- PostgreSQL
+- Knex.js
 
-#### Future Development 
-
-- Interested in having multiple tags per activity 
-- having our users comment reviews on activities 
-- activities grouped by location of user 
-- users can upload and crop their own images 
-- have a *wild card* activity generator 
-
-## Our Project 
+## View Our Project
 
 https://never-bored.herokuapp.com/
 
-
-Created By: 
+## Developed by | April 2017
 
 John Seymour: https://github.com/andromeda111
 
 Alyssa Evans: https://github.com/missalyss
 
 Amalia Fergin: https://github.com/amaliaclaire
-
-
-
