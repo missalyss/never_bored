@@ -31,7 +31,6 @@ margin-top: 50px;
 }
 
 .img_url {
-  max-height: 200px;
   max-width: 100%;
 }
 
@@ -176,10 +175,17 @@ padding: 4px 10px;
   font-size: 15px;
 }
 
-/*.activity{
-  height: 300px;
-}*/
-
 .a-lg {
   font-size: 3rem;
+}
+
+.card-img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.img-box {
+  overflow: hidden;
+  max-height: 191px;
+  max-width: 191px;
 }
